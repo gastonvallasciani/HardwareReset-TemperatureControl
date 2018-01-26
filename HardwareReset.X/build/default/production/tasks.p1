@@ -1,9 +1,9 @@
 Version 3.2 HI-TECH Software Intermediate Code
 "343 mcc_generated_files/tmr2.h
 [v _TMR2_SetInterruptHandler `(v ~T0 @X0 0 ef1`*v ]
-"8 tasks.c
+"14 tasks.c
 [v _TMR2_Tick `(v ~T0 @X0 0 ef ]
-"18
+"26
 [c E7026 2 29 30 31 .. ]
 [n E7026 . TEMP_SENSOR channel_CTMU channel_DAC channel_FVRBuf2  ]
 "165 mcc_generated_files/adc.h
@@ -19,11 +19,23 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S383 . . . ]
 "7835
 [v _LATDbits `VS383 ~T0 @X0 0 e@3980 ]
+"24 PID.h
+[v _PID_SetPoint `(v ~T0 @X0 0 ef1`i ]
+"25
+[v _PID_SetTunings `(v ~T0 @X0 0 ef3`d`d`d ]
+"26
+[v _PID_SetSampleTime `(v ~T0 @X0 0 ef1`i ]
+"27
+[v _PID_SetOutputLimits `(v ~T0 @X0 0 ef2`i`i ]
+"28
+[v _PID_SetControllerDirection `(v ~T0 @X0 0 ef1`i ]
+"29
+[v _PID_SetMode `(v ~T0 @X0 0 ef1`i ]
 "192 mcc_generated_files/adc.h
 [v _ADC_StartConversion `(v ~T0 @X0 0 ef ]
-[v F7059 `(v ~T0 @X0 1 tf ]
-"10 tasks.c
-[v _TempUpdate `TF7059 ~T0 @X0 0 e ]
+[v F7087 `(v ~T0 @X0 1 tf ]
+"16 tasks.c
+[v _TempUpdate `TF7087 ~T0 @X0 0 e ]
 "7481 C:\Program Files\Microchip\xc8\v1.41\include\pic18f46k22.h
 [s S375 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S375 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
@@ -35,11 +47,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S374 . . . ]
 "7502
 [v _LATAbits `VS374 ~T0 @X0 0 e@3977 ]
-[v F7056 `(v ~T0 @X0 1 tf ]
-"9 tasks.c
-[v _TempAcquisition `TF7056 ~T0 @X0 0 e ]
+[v F7084 `(v ~T0 @X0 1 tf ]
+"15 tasks.c
+[v _TempAcquisition `TF7084 ~T0 @X0 0 e ]
 "287 mcc_generated_files/adc.h
 [v _ADC_GetConversion `(ui ~T0 @X0 0 ef1`E7026 ]
+"23 PID.h
+[v _PID_Control `(i ~T0 @X0 0 ef1`i ]
 "134 mcc_generated_files/eusart1.h
 [v _EUSART1_Write `(v ~T0 @X0 0 ef1`uc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
@@ -6603,8 +6617,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 161: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 163: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 165: extern __nonreentrant void _delay3(unsigned char);
-[; ;pin_manager.h: 138: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 150: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 149: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 161: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef signed short long int int24_t;
@@ -6675,301 +6689,432 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.h: 85: void OSCILLATOR_Initialize(void);
 [; ;tasks.h: 15: inline void InitHardware();
 [; ;tasks.h: 16: inline void MainTask();
-[; ;tasks.c: 8: void TMR2_Tick(void);
-[; ;tasks.c: 9: inline void TempAcquisition(void);
-[; ;tasks.c: 10: inline void TempUpdate(void);
-"12 tasks.c
+[; ;PID.h: 12: typedef struct {
+[; ;PID.h: 13: volatile int Min;
+[; ;PID.h: 14: volatile int Max;
+[; ;PID.h: 16: volatile double Kp;
+[; ;PID.h: 17: volatile double Ki;
+[; ;PID.h: 18: volatile double Kd;
+[; ;PID.h: 20: volatile double SetPoint;
+[; ;PID.h: 21: } tPID;
+[; ;PID.h: 23: int PID_Control(int);
+[; ;PID.h: 24: void PID_SetPoint(int);
+[; ;PID.h: 25: void PID_SetTunings(double, double, double);
+[; ;PID.h: 26: void PID_SetSampleTime(int);
+[; ;PID.h: 27: void PID_SetOutputLimits(int, int);
+[; ;PID.h: 28: void PID_SetControllerDirection(int);
+[; ;PID.h: 29: void PID_SetMode(int);
+[; ;PID.h: 30: void PID_Initialize(void);
+[; ;PID.h: 32: extern tPID PIDConfig;
+[; ;tasks.c: 14: void TMR2_Tick(void);
+[; ;tasks.c: 15: inline void TempAcquisition(void);
+[; ;tasks.c: 16: inline void TempUpdate(void);
+"18 tasks.c
 [v _TempCounter `ui ~T0 @X0 1 e ]
 [i _TempCounter
 -> -> 0 `i `ui
 ]
-[; ;tasks.c: 12: uint16_t TempCounter = 0;
+[; ;tasks.c: 18: uint16_t TempCounter = 0;
+"19
+[v _TEMP_FLOAT `f ~T0 @X0 1 e ]
+[; ;tasks.c: 19: float TEMP_FLOAT;
+"20
+[v _DutyPeltier `ui ~T0 @X0 1 e ]
+[; ;tasks.c: 20: unsigned int DutyPeltier;
 [v F7049 `(v ~T0 @X0 1 tf ]
-"14
+"22
 [v _InitHardware `TF7049 ~T0 @X0 1 e ]
-"15
+"23
 {
-[; ;tasks.c: 14: inline void InitHardware()
-[; ;tasks.c: 15: {
+[; ;tasks.c: 22: inline void InitHardware()
+[; ;tasks.c: 23: {
 [e :U _InitHardware ]
 [f ]
-[; ;tasks.c: 16: TMR2_SetInterruptHandler(TMR2_Tick);
-"16
+[; ;tasks.c: 24: TMR2_SetInterruptHandler(TMR2_Tick);
+"24
 [e ( _TMR2_SetInterruptHandler (1 -> &U _TMR2_Tick `*v ]
-[; ;tasks.c: 18: ADC_SelectChannel(TEMP_SENSOR);
-"18
+[; ;tasks.c: 26: ADC_SelectChannel(TEMP_SENSOR);
+"26
 [e ( _ADC_SelectChannel (1 . `E7026 0 ]
-[; ;tasks.c: 20: do { LATDbits.LATD7 = 1; } while(0);
-"20
-[e :U 853 ]
+[; ;tasks.c: 28: do { LATDbits.LATD7 = 1; } while(0);
+"28
+[e :U 854 ]
 {
 [e = . . _LATDbits 0 7 -> -> 1 `i `uc ]
 }
-[e :U 852 ]
-[; ;tasks.c: 21: do { LATDbits.LATD6 = 1; } while(0);
-"21
-[e :U 856 ]
+[e :U 853 ]
+[; ;tasks.c: 29: do { LATDbits.LATD6 = 1; } while(0);
+"29
+[e :U 857 ]
 {
 [e = . . _LATDbits 0 6 -> -> 1 `i `uc ]
 }
-[e :U 855 ]
-[; ;tasks.c: 23: ADC_StartConversion();
-"23
+[e :U 856 ]
+[; ;tasks.c: 31: PID_SetPoint((int)(100 * 24));
+"31
+[e ( _PID_SetPoint (1 * -> 100 `i -> 24 `i ]
+[; ;tasks.c: 32: PID_SetTunings(0.1, 0.001, 0);
+"32
+[e ( _PID_SetTunings (3 , , .0.1 .0.001 -> -> 0 `i `d ]
+[; ;tasks.c: 33: PID_SetSampleTime(4000);
+"33
+[e ( _PID_SetSampleTime (1 -> 4000 `i ]
+[; ;tasks.c: 34: PID_SetOutputLimits(5, 80);
+"34
+[e ( _PID_SetOutputLimits (2 , -> 5 `i -> 80 `i ]
+[; ;tasks.c: 35: PID_SetControllerDirection(0);
+"35
+[e ( _PID_SetControllerDirection (1 -> 0 `i ]
+[; ;tasks.c: 36: PID_SetMode(1);
+"36
+[e ( _PID_SetMode (1 -> 1 `i ]
+[; ;tasks.c: 38: ADC_StartConversion();
+"38
 [e ( _ADC_StartConversion ..  ]
-[; ;tasks.c: 25: }
-"25
-[e :UE 850 ]
+[; ;tasks.c: 40: }
+"40
+[e :UE 851 ]
 }
 [v F7051 `(v ~T0 @X0 1 tf ]
-"27
+"42
 [v _MainTask `TF7051 ~T0 @X0 1 e ]
-"28
+"43
 {
-[; ;tasks.c: 27: inline void MainTask()
-[; ;tasks.c: 28: {
+[; ;tasks.c: 42: inline void MainTask()
+[; ;tasks.c: 43: {
 [e :U _MainTask ]
 [f ]
-[; ;tasks.c: 29: TempUpdate();
-"29
+[; ;tasks.c: 44: TempUpdate();
+"44
 [e ( _TempUpdate ..  ]
-[; ;tasks.c: 30: }
-"30
-[e :UE 857 ]
+[; ;tasks.c: 45: }
+"45
+[e :UE 858 ]
 }
-"32
+"47
 [v _TMR2_Tick `(v ~T0 @X0 1 ef ]
-"33
+"48
 {
-[; ;tasks.c: 32: void TMR2_Tick(void)
-[; ;tasks.c: 33: {
+[; ;tasks.c: 47: void TMR2_Tick(void)
+[; ;tasks.c: 48: {
 [e :U _TMR2_Tick ]
 [f ]
-[; ;tasks.c: 34: TempCounter++;
-"34
+[; ;tasks.c: 49: TempCounter++;
+"49
 [e ++ _TempCounter -> -> 1 `i `ui ]
-"35
-[v F7065 `Vui ~T0 @X0 1 s seg ]
-[i F7065
+"50
+[v F7096 `Vui ~T0 @X0 1 s seg ]
+[i F7096
 -> -> 0 `i `ui
 ]
-"36
-[v F7066 `Vui ~T0 @X0 1 s min ]
-[i F7066
+"51
+[v F7097 `Vui ~T0 @X0 1 s min ]
+[i F7097
 -> -> 0 `i `ui
 ]
-"37
-[v F7067 `Vui ~T0 @X0 1 s Hard_ON ]
-[i F7067
+"52
+[v F7098 `Vui ~T0 @X0 1 s Hard_ON ]
+[i F7098
 -> -> 0 `i `ui
 ]
-"38
-[v F7068 `Vui ~T0 @X0 1 s Hard_OFF ]
-[i F7068
+"53
+[v F7099 `Vui ~T0 @X0 1 s Hard_OFF ]
+[i F7099
 -> -> 0 `i `ui
 ]
-"39
-[v F7069 `Vui ~T0 @X0 1 s State ]
-[i F7069
+"54
+[v F7100 `Vui ~T0 @X0 1 s State ]
+[i F7100
 -> -> 0 `i `ui
 ]
-[; ;tasks.c: 35: static volatile unsigned uint16_t seg = 0;
-[; ;tasks.c: 36: static volatile unsigned uint16_t min = 0;
-[; ;tasks.c: 37: static volatile unsigned uint16_t Hard_ON = 0;
-[; ;tasks.c: 38: static volatile unsigned uint16_t Hard_OFF = 0;
-[; ;tasks.c: 39: static volatile unsigned uint16_t State = 0;
-[; ;tasks.c: 41: if (++seg >= 1000)
-"41
-[e $ ! >= =+ F7065 -> -> 1 `i `ui -> -> 1000 `i `ui 859  ]
-[; ;tasks.c: 42: {
-"42
+[; ;tasks.c: 50: static volatile unsigned uint16_t seg = 0;
+[; ;tasks.c: 51: static volatile unsigned uint16_t min = 0;
+[; ;tasks.c: 52: static volatile unsigned uint16_t Hard_ON = 0;
+[; ;tasks.c: 53: static volatile unsigned uint16_t Hard_OFF = 0;
+[; ;tasks.c: 54: static volatile unsigned uint16_t State = 0;
+[; ;tasks.c: 56: if (++seg >= 1000)
+"56
+[e $ ! >= =+ F7096 -> -> 1 `i `ui -> -> 1000 `i `ui 860  ]
+[; ;tasks.c: 57: {
+"57
 {
-[; ;tasks.c: 43: do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
-"43
-[e :U 862 ]
+[; ;tasks.c: 58: do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
+"58
+[e :U 863 ]
 {
 [e = . . _LATAbits 0 0 -> ~ -> . . _LATAbits 0 0 `i `uc ]
 }
-[e :U 861 ]
-[; ;tasks.c: 44: if ((++Hard_OFF >= 10))
-"44
-[e $ ! >= =+ F7068 -> -> 1 `i `ui -> -> 10 `i `ui 863  ]
-[; ;tasks.c: 45: {
-"45
+[e :U 862 ]
+[; ;tasks.c: 59: if ((++Hard_OFF >= 10))
+"59
+[e $ ! >= =+ F7099 -> -> 1 `i `ui -> -> 10 `i `ui 864  ]
+[; ;tasks.c: 60: {
+"60
 {
-[; ;tasks.c: 46: if (State == 0)
-"46
-[e $ ! == F7069 -> -> 0 `i `ui 864  ]
-[; ;tasks.c: 47: {
-"47
+[; ;tasks.c: 61: if (State == 0)
+"61
+[e $ ! == F7100 -> -> 0 `i `ui 865  ]
+[; ;tasks.c: 62: {
+"62
 {
-[; ;tasks.c: 48: do { LATDbits.LATD6 = 0; } while(0);
-"48
-[e :U 867 ]
+[; ;tasks.c: 63: do { LATDbits.LATD6 = 0; } while(0);
+"63
+[e :U 868 ]
 {
 [e = . . _LATDbits 0 6 -> -> 0 `i `uc ]
 }
-[e :U 866 ]
-[; ;tasks.c: 49: do { LATDbits.LATD7 = 0; } while(0);
-"49
-[e :U 870 ]
+[e :U 867 ]
+[; ;tasks.c: 64: do { LATDbits.LATD7 = 0; } while(0);
+"64
+[e :U 871 ]
 {
 [e = . . _LATDbits 0 7 -> -> 0 `i `uc ]
 }
-[e :U 869 ]
-[; ;tasks.c: 50: State = 1;
-"50
-[e = F7069 -> -> 1 `i `ui ]
-"51
-}
-[e :U 864 ]
-[; ;tasks.c: 51: }
-[; ;tasks.c: 52: Hard_OFF = 0;
-"52
-[e = F7068 -> -> 0 `i `ui ]
-"54
-}
-[e :U 863 ]
-[; ;tasks.c: 54: }
-[; ;tasks.c: 55: if (++min >= 60)
-"55
-[e $ ! >= =+ F7066 -> -> 1 `i `ui -> -> 60 `i `ui 871  ]
-[; ;tasks.c: 56: {
-"56
-{
-[; ;tasks.c: 57: if ((++Hard_ON >= 60))
-"57
-[e $ ! >= =+ F7067 -> -> 1 `i `ui -> -> 60 `i `ui 872  ]
-[; ;tasks.c: 58: {
-"58
-{
-[; ;tasks.c: 59: Hard_ON=0;
-"59
-[e = F7067 -> -> 0 `i `ui ]
-[; ;tasks.c: 60: if(State == 1)
-"60
-[e $ ! == F7069 -> -> 1 `i `ui 873  ]
-[; ;tasks.c: 61: {
-"61
-{
-[; ;tasks.c: 62: State = 0;
-"62
-[e = F7069 -> -> 0 `i `ui ]
-[; ;tasks.c: 63: do { LATDbits.LATD6 = 1; } while(0);
-"63
-[e :U 876 ]
-{
-[e = . . _LATDbits 0 6 -> -> 1 `i `uc ]
-}
-[e :U 875 ]
-[; ;tasks.c: 64: do { LATDbits.LATD7 = 1; } while(0);
-"64
-[e :U 879 ]
-{
-[e = . . _LATDbits 0 7 -> -> 1 `i `uc ]
-}
-[e :U 878 ]
+[e :U 870 ]
+[; ;tasks.c: 65: State = 1;
 "65
-}
-[e :U 873 ]
+[e = F7100 -> -> 1 `i `ui ]
 "66
 }
-[e :U 872 ]
-[; ;tasks.c: 65: }
+[e :U 865 ]
 [; ;tasks.c: 66: }
-[; ;tasks.c: 67: min = 0;
+[; ;tasks.c: 67: Hard_OFF = 0;
 "67
-[e = F7066 -> -> 0 `i `ui ]
-"68
-}
-[e :U 871 ]
-[; ;tasks.c: 68: }
-[; ;tasks.c: 69: seg = 0;
+[e = F7099 -> -> 0 `i `ui ]
 "69
-[e = F7065 -> -> 0 `i `ui ]
+}
+[e :U 864 ]
+[; ;tasks.c: 69: }
+[; ;tasks.c: 70: if (++min >= 60)
 "70
-}
-[e :U 859 ]
-[; ;tasks.c: 70: }
-[; ;tasks.c: 71: }
+[e $ ! >= =+ F7097 -> -> 1 `i `ui -> -> 60 `i `ui 872  ]
+[; ;tasks.c: 71: {
 "71
-[e :UE 858 ]
-}
-"73
-[v _TempUpdate `TF7059 ~T0 @X0 1 e ]
-"74
 {
-[; ;tasks.c: 73: inline void TempUpdate(void)
-[; ;tasks.c: 74: {
-[e :U _TempUpdate ]
-[f ]
-[; ;tasks.c: 75: if (TempCounter > 10*10*10*1)
+[; ;tasks.c: 72: if ((++Hard_ON >= 60))
+"72
+[e $ ! >= =+ F7098 -> -> 1 `i `ui -> -> 60 `i `ui 873  ]
+[; ;tasks.c: 73: {
+"73
+{
+[; ;tasks.c: 74: Hard_ON=0;
+"74
+[e = F7098 -> -> 0 `i `ui ]
+[; ;tasks.c: 75: if(State == 1)
 "75
-[e $ ! > _TempCounter -> * * * -> 10 `i -> 10 `i -> 10 `i -> 1 `i `ui 881  ]
+[e $ ! == F7100 -> -> 1 `i `ui 874  ]
 [; ;tasks.c: 76: {
 "76
 {
-[; ;tasks.c: 77: TempAcquisition();
+[; ;tasks.c: 77: State = 0;
 "77
-[e ( _TempAcquisition ..  ]
-[; ;tasks.c: 78: TempCounter = 0;
+[e = F7100 -> -> 0 `i `ui ]
+[; ;tasks.c: 78: do { LATDbits.LATD6 = 1; } while(0);
 "78
-[e = _TempCounter -> -> 0 `i `ui ]
-"79
-}
-[e :U 881 ]
-[; ;tasks.c: 79: }
-[; ;tasks.c: 80: }
-"80
-[e :UE 880 ]
-}
-"81
-[v _TempAcquisition `TF7056 ~T0 @X0 1 e ]
-"82
+[e :U 877 ]
 {
-[; ;tasks.c: 81: inline void TempAcquisition(void)
-[; ;tasks.c: 82: {
+[e = . . _LATDbits 0 6 -> -> 1 `i `uc ]
+}
+[e :U 876 ]
+[; ;tasks.c: 79: do { LATDbits.LATD7 = 1; } while(0);
+"79
+[e :U 880 ]
+{
+[e = . . _LATDbits 0 7 -> -> 1 `i `uc ]
+}
+[e :U 879 ]
+"80
+}
+[e :U 874 ]
+"81
+}
+[e :U 873 ]
+[; ;tasks.c: 80: }
+[; ;tasks.c: 81: }
+[; ;tasks.c: 82: min = 0;
+"82
+[e = F7097 -> -> 0 `i `ui ]
+"83
+}
+[e :U 872 ]
+[; ;tasks.c: 83: }
+[; ;tasks.c: 84: seg = 0;
+"84
+[e = F7096 -> -> 0 `i `ui ]
+"85
+}
+[e :U 860 ]
+[; ;tasks.c: 85: }
+[; ;tasks.c: 87: if (DutyPeltier == 0)
+"87
+[e $ ! == _DutyPeltier -> -> 0 `i `ui 881  ]
+[; ;tasks.c: 88: {
+"88
+{
+[; ;tasks.c: 89: do { LATAbits.LATA4 = 0; } while(0);
+"89
+[e :U 884 ]
+{
+[e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
+}
+[e :U 883 ]
+"90
+}
+[; ;tasks.c: 90: }
+[e $U 885  ]
+"91
+[e :U 881 ]
+[; ;tasks.c: 91: else
+[; ;tasks.c: 92: {
+"92
+{
+"93
+[v F7101 `ui ~T0 @X0 1 s PeltierCounter ]
+[; ;tasks.c: 93: static unsigned int PeltierCounter;
+[; ;tasks.c: 94: if (PeltierCounter++ == 0)
+"94
+[e $ ! == ++ F7101 -> -> 1 `i `ui -> -> 0 `i `ui 886  ]
+[; ;tasks.c: 95: {
+"95
+{
+[; ;tasks.c: 96: do { LATAbits.LATA4 = 1; } while(0);
+"96
+[e :U 889 ]
+{
+[e = . . _LATAbits 0 4 -> -> 1 `i `uc ]
+}
+[e :U 888 ]
+"97
+}
+[; ;tasks.c: 97: }
+[e $U 890  ]
+"98
+[e :U 886 ]
+[; ;tasks.c: 98: else if (PeltierCounter == DutyPeltier)
+[e $ ! == F7101 _DutyPeltier 891  ]
+[; ;tasks.c: 99: {
+"99
+{
+[; ;tasks.c: 100: do { LATAbits.LATA4 = 0; } while(0);
+"100
+[e :U 894 ]
+{
+[e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
+}
+[e :U 893 ]
+"101
+}
+[; ;tasks.c: 101: }
+[e $U 895  ]
+"102
+[e :U 891 ]
+[; ;tasks.c: 102: else if (PeltierCounter > 100)
+[e $ ! > F7101 -> -> 100 `i `ui 896  ]
+[; ;tasks.c: 103: {
+"103
+{
+[; ;tasks.c: 104: PeltierCounter = 0;
+"104
+[e = F7101 -> -> 0 `i `ui ]
+"105
+}
+[e :U 896 ]
+"106
+[e :U 895 ]
+[e :U 890 ]
+}
+[e :U 885 ]
+[; ;tasks.c: 105: }
+[; ;tasks.c: 106: }
+[; ;tasks.c: 107: }
+"107
+[e :UE 859 ]
+}
+"109
+[v _TempUpdate `TF7087 ~T0 @X0 1 e ]
+"110
+{
+[; ;tasks.c: 109: inline void TempUpdate(void)
+[; ;tasks.c: 110: {
+[e :U _TempUpdate ]
+[f ]
+[; ;tasks.c: 111: if (TempCounter > 10*10*10*1)
+"111
+[e $ ! > _TempCounter -> * * * -> 10 `i -> 10 `i -> 10 `i -> 1 `i `ui 898  ]
+[; ;tasks.c: 112: {
+"112
+{
+[; ;tasks.c: 113: TempAcquisition();
+"113
+[e ( _TempAcquisition ..  ]
+[; ;tasks.c: 114: TempCounter = 0;
+"114
+[e = _TempCounter -> -> 0 `i `ui ]
+"115
+}
+[e :U 898 ]
+[; ;tasks.c: 115: }
+[; ;tasks.c: 116: }
+"116
+[e :UE 897 ]
+}
+"117
+[v _TempAcquisition `TF7084 ~T0 @X0 1 e ]
+"118
+{
+[; ;tasks.c: 117: inline void TempAcquisition(void)
+[; ;tasks.c: 118: {
 [e :U _TempAcquisition ]
 [f ]
-"83
-[v F7074 `ui ~T0 @X0 1 s TEMPERATURA ]
-[i F7074
+"119
+[v F7106 `ui ~T0 @X0 1 s TEMPERATURA ]
+[i F7106
 -> -> 0 `i `ui
 ]
-"84
-[v F7075 `ui ~T0 @X0 1 s TEMPH ]
-[i F7075
+"120
+[v F7107 `ui ~T0 @X0 1 s TEMPH ]
+[i F7107
 -> -> 0 `i `ui
 ]
-"85
-[v F7076 `ui ~T0 @X0 1 s TEMPL ]
-[i F7076
+"121
+[v F7108 `ui ~T0 @X0 1 s TEMPL ]
+[i F7108
 -> -> 0 `i `ui
 ]
-[; ;tasks.c: 83: static uint16_t TEMPERATURA=0;
-[; ;tasks.c: 84: static uint16_t TEMPH=0;
-[; ;tasks.c: 85: static uint16_t TEMPL=0;
-[; ;tasks.c: 87: TEMPERATURA = ADC_GetConversion(TEMP_SENSOR);
-"87
-[e = F7074 ( _ADC_GetConversion (1 . `E7026 0 ]
-[; ;tasks.c: 89: TEMPH = 0x00FF*TEMPERATURA;
-"89
-[e = F7075 * -> -> 255 `i `ui F7074 ]
-[; ;tasks.c: 90: TEMPL = (0xFF00*TEMPERATURA)>>8;
-"90
-[e = F7076 >> * -> 65280 `ui F7074 -> 8 `i ]
-[; ;tasks.c: 92: EUSART1_Write(1);
-"92
+[; ;tasks.c: 119: static uint16_t TEMPERATURA=0;
+[; ;tasks.c: 120: static uint16_t TEMPH=0;
+[; ;tasks.c: 121: static uint16_t TEMPL=0;
+[; ;tasks.c: 123: TEMPERATURA = ADC_GetConversion(TEMP_SENSOR);
+"123
+[e = F7106 ( _ADC_GetConversion (1 . `E7026 0 ]
+[; ;tasks.c: 124: TEMP_FLOAT = (((int)(TEMPERATURA))*5)/1024;
+"124
+[e = _TEMP_FLOAT -> / * -> F7106 `i -> 5 `i -> 1024 `i `f ]
+[; ;tasks.c: 125: TEMP_FLOAT = (TEMP_FLOAT/0.08)*100;
+"125
+[e = _TEMP_FLOAT -> * / -> _TEMP_FLOAT `d .0.08 -> -> 100 `i `d `f ]
+[; ;tasks.c: 127: DutyPeltier = PID_Control((int)(TEMP_FLOAT));;
+"127
+[e = _DutyPeltier -> ( _PID_Control (1 -> _TEMP_FLOAT `i `ui ]
+[; ;tasks.c: 129: TEMPH = 0x00FF*TEMPERATURA;
+"129
+[e = F7107 * -> -> 255 `i `ui F7106 ]
+[; ;tasks.c: 130: TEMPL = (0xFF00*TEMPERATURA)>>8;
+"130
+[e = F7108 >> * -> 65280 `ui F7106 -> 8 `i ]
+[; ;tasks.c: 132: EUSART1_Write(1);
+"132
 [e ( _EUSART1_Write (1 -> -> 1 `i `uc ]
-[; ;tasks.c: 93: EUSART1_Write(TEMPL);
-"93
-[e ( _EUSART1_Write (1 -> F7076 `uc ]
-[; ;tasks.c: 94: EUSART1_Write(TEMPH);
-"94
-[e ( _EUSART1_Write (1 -> F7075 `uc ]
-[; ;tasks.c: 95: EUSART1_Write(1);
-"95
+[; ;tasks.c: 133: EUSART1_Write(TEMPL);
+"133
+[e ( _EUSART1_Write (1 -> F7108 `uc ]
+[; ;tasks.c: 134: EUSART1_Write(TEMPH);
+"134
+[e ( _EUSART1_Write (1 -> F7107 `uc ]
+[; ;tasks.c: 135: EUSART1_Write(1);
+"135
 [e ( _EUSART1_Write (1 -> -> 1 `i `uc ]
-[; ;tasks.c: 97: }
-"97
-[e :UE 882 ]
+[; ;tasks.c: 137: }
+"137
+[e :UE 899 ]
 }

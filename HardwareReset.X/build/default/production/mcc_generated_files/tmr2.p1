@@ -6648,8 +6648,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr2.h: 343: void TMR2_SetInterruptHandler(void *InterruptHandler);
 [; ;tmr2.h: 361: extern void (*TMR2_InterruptHandler)(void);
 [; ;tmr2.h: 379: void TMR2_DefaultInterruptHandler(void);
-[; ;pin_manager.h: 138: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 150: void PIN_MANAGER_IOC(void);
+[; ;pin_manager.h: 149: void PIN_MANAGER_Initialize (void);
+[; ;pin_manager.h: 161: void PIN_MANAGER_IOC(void);
 "59 mcc_generated_files/tmr2.c
 [v _TMR2_InterruptHandler `*F7000 ~T0 @X0 1 e ]
 [; ;tmr2.c: 59: void (*TMR2_InterruptHandler)(void);

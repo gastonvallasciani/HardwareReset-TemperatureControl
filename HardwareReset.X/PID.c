@@ -1,6 +1,6 @@
 /*
  * File:   devices.c
- * Author: Nico Christie
+ * Author: 
  *
  * Created on 02 de noviembre de 2016, 14:40
  */

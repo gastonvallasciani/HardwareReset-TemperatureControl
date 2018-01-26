@@ -8573,10 +8573,10 @@ extern void (*TMR2_InterruptHandler)(void);
 # 379
 void TMR2_DefaultInterruptHandler(void);
 
-# 138 "mcc_generated_files/pin_manager.h"
+# 149 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 150
+# 161
 void PIN_MANAGER_IOC(void);
 
 # 59 "mcc_generated_files/tmr2.c"

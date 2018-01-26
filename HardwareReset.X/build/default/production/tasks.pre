@@ -8447,10 +8447,10 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 138 "mcc_generated_files/pin_manager.h"
+# 149 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
 
-# 150
+# 161
 void PIN_MANAGER_IOC(void);
 
 # 13 "C:\Program Files\Microchip\xc8\v1.41\include\stdint.h"
@@ -8647,12 +8647,37 @@ void OSCILLATOR_Initialize(void);
 inline void InitHardware();
 inline void MainTask();
 
-# 8 "tasks.c"
+# 12 "PID.h"
+typedef struct {
+volatile int Min;
+volatile int Max;
+
+volatile double Kp;
+volatile double Ki;
+volatile double Kd;
+
+volatile double SetPoint;
+} tPID;
+
+int PID_Control(int);
+void PID_SetPoint(int);
+void PID_SetTunings(double, double, double);
+void PID_SetSampleTime(int);
+void PID_SetOutputLimits(int, int);
+void PID_SetControllerDirection(int);
+void PID_SetMode(int);
+void PID_Initialize(void);
+
+extern tPID PIDConfig;
+
+# 14 "tasks.c"
 void TMR2_Tick(void);
 inline void TempAcquisition(void);
 inline void TempUpdate(void);
 
 uint16_t TempCounter = 0;
+float TEMP_FLOAT;
+unsigned int DutyPeltier;
 
 inline void InitHardware()
 {
@@ -8662,6 +8687,13 @@ ADC_SelectChannel(TEMP_SENSOR);
 
 do { LATDbits.LATD7 = 1; } while(0);
 do { LATDbits.LATD6 = 1; } while(0);
+
+PID_SetPoint((int)(100 * 24));
+PID_SetTunings(0.1, 0.001, 0);
+PID_SetSampleTime(4000);
+PID_SetOutputLimits(5, 80);
+PID_SetControllerDirection(0);
+PID_SetMode(1);
 
 ADC_StartConversion();
 
@@ -8711,6 +8743,27 @@ min = 0;
 }
 seg = 0;
 }
+
+if (DutyPeltier == 0)
+{
+do { LATAbits.LATA4 = 0; } while(0);
+}
+else
+{
+static unsigned int PeltierCounter;
+if (PeltierCounter++ == 0)
+{
+do { LATAbits.LATA4 = 1; } while(0);
+}
+else if (PeltierCounter == DutyPeltier)
+{
+do { LATAbits.LATA4 = 0; } while(0);
+}
+else if (PeltierCounter > 100)
+{
+PeltierCounter = 0;
+}
+}
 }
 
 inline void TempUpdate(void)
@@ -8728,6 +8781,10 @@ static uint16_t TEMPH=0;
 static uint16_t TEMPL=0;
 
 TEMPERATURA = ADC_GetConversion(TEMP_SENSOR);
+TEMP_FLOAT = (((int)(TEMPERATURA))*5)/1024;
+TEMP_FLOAT = (TEMP_FLOAT/0.08)*100;
+
+DutyPeltier = PID_Control((int)(TEMP_FLOAT));;
 
 TEMPH = 0x00FF*TEMPERATURA;
 TEMPL = (0xFF00*TEMPERATURA)>>8;

@@ -87,6 +87,17 @@
 #define TEMP_SENSOR_SetAnalogMode()  do { ANSELAbits.ANSA2 = 1; } while(0)
 #define TEMP_SENSOR_SetDigitalMode() do { ANSELAbits.ANSA2 = 0; } while(0)
 
+// get/set PELTIER_DUTY aliases
+#define PELTIER_DUTY_TRIS               TRISAbits.TRISA4
+#define PELTIER_DUTY_LAT                LATAbits.LATA4
+#define PELTIER_DUTY_PORT               PORTAbits.RA4
+#define PELTIER_DUTY_SetHigh()            do { LATAbits.LATA4 = 1; } while(0)
+#define PELTIER_DUTY_SetLow()             do { LATAbits.LATA4 = 0; } while(0)
+#define PELTIER_DUTY_Toggle()             do { LATAbits.LATA4 = ~LATAbits.LATA4; } while(0)
+#define PELTIER_DUTY_GetValue()           PORTAbits.RA4
+#define PELTIER_DUTY_SetDigitalInput()    do { TRISAbits.TRISA4 = 1; } while(0)
+#define PELTIER_DUTY_SetDigitalOutput()   do { TRISAbits.TRISA4 = 0; } while(0)
+
 // get/set RC6 procedures
 #define RC6_SetHigh()    do { LATCbits.LATC6 = 1; } while(0)
 #define RC6_SetLow()   do { LATCbits.LATC6 = 0; } while(0)

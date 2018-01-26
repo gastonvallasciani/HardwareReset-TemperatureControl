@@ -1,15 +1,23 @@
 #include "mcc_generated_files/mcc.h"
 #include "tasks.h"
+#include "PID.h"
 
 #define OFF 0
 #define ON 1
 
+#define DIVIDER_PERIOD_mSeg			4000
+#define DIVIDER_PERIOD				(DIVIDER_PERIOD_mSeg * _1mSeg)
+
+#define PELTIER_MIN_DUTY			5
+#define PELTIER_MAX_DUTY			80
 
 void TMR2_Tick(void);
 inline void TempAcquisition(void);
 inline void TempUpdate(void);
 
 uint16_t TempCounter = 0;
+float TEMP_FLOAT;
+unsigned int DutyPeltier;
 
 inline void InitHardware()
 {
@@ -19,6 +27,13 @@ inline void InitHardware()
     
     RELAY1_SetHigh();
     RELAY2_SetHigh();
+    
+    PID_SetPoint((int)(100 * 24));
+	PID_SetTunings(0.1, 0.001, 0);
+    PID_SetSampleTime(DIVIDER_PERIOD_mSeg);
+	PID_SetOutputLimits(PELTIER_MIN_DUTY, PELTIER_MAX_DUTY);
+	PID_SetControllerDirection(PID_DIRECT);
+	PID_SetMode(PID_AUTOMATIC);
     
     ADC_StartConversion();
     
@@ -68,6 +83,27 @@ void TMR2_Tick(void)
             }
             seg = 0;
         }
+    
+    if (DutyPeltier == 0) 
+	{
+		PELTIER_DUTY_SetLow(); 
+	}
+	else
+	{
+		static unsigned int PeltierCounter;
+		if (PeltierCounter++ == 0)
+		{
+			PELTIER_DUTY_SetHigh();
+		}
+		else if (PeltierCounter == DutyPeltier)
+		{
+			PELTIER_DUTY_SetLow();
+		}
+		else if (PeltierCounter > 100)
+		{
+			PeltierCounter = 0;
+		}
+	}
 }
 
 inline void TempUpdate(void)
@@ -85,6 +121,10 @@ inline void TempAcquisition(void)
     static uint16_t TEMPL=0;
     
     TEMPERATURA = ADC_GetConversion(TEMP_SENSOR);
+    TEMP_FLOAT = (((int)(TEMPERATURA))*5)/1024;
+    TEMP_FLOAT = (TEMP_FLOAT/0.08)*100;
+    
+    DutyPeltier = PID_Control((int)(TEMP_FLOAT));;
     
     TEMPH = 0x00FF*TEMPERATURA;
     TEMPL = (0xFF00*TEMPERATURA)>>8;

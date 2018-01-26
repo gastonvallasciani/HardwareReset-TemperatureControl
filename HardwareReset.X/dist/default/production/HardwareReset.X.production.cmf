@@ -11,52 +11,73 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\ARIELL~1\AppData\Local\Temp\s4us.obj
+$C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.obj
 idloc IDLOC 0 200000 200000 8 1
 init CODE 0 9A 9A 4 1
 reset_vec CODE 0 0 0 4 1
 config CONFIG 0 300000 300000 E 1
 $dist/default/production\HardwareReset.X.production.obj
-cinit CODE 0 2DC 2DC 1A 1
-text0 CODE 0 36A 36A 12 1
-text1 CODE 0 2A2 2A2 1E 1
-text2 CODE 0 240 240 22 1
-text3 CODE 0 3A6 3A6 4 1
-text4 CODE 0 1A0 1A0 4A 1
-text5 CODE 0 37C 37C E 1
-text6 CODE 0 3AA 3AA 4 1
-text7 CODE 0 340 340 16 1
-text8 CODE 0 356 356 14 1
-text9 CODE 0 310 310 18 1
-nvCOMRAM COMRAM 1 2A 2A 2 1
-text10 CODE 0 3A0 3A0 6 1
-text11 CODE 0 2F6 2F6 1A 1
-text12 CODE 0 144 144 5C 1
-text13 CODE 0 21A 21A 26 1
-text14 CODE 0 38A 38A C 1
-text15 CODE 0 1EA 1EA 30 1
-text16 CODE 0 2C0 2C0 1C 1
-text17 CODE 0 396 396 A 1
-text18 CODE 0 3AE 3AE 4 1
-text19 CODE 0 328 328 18 1
-text21 CODE 0 262 262 20 1
-text22 CODE 0 282 282 20 1
-text23 CODE 0 3B6 3B6 2 1
-text24 CODE 0 9E 9E A6 1
-text25 CODE 0 3B2 3B2 4 1
-cstackCOMRAM COMRAM 1 1 1 15 1
-temp COMRAM 1 2C 2C 1 1
+cinit CODE 0 10D6 10D6 3E 1
+text0 CODE 0 1318 1318 12 1
+text1 CODE 0 1286 1286 1E 1
+text2 CODE 0 1224 1224 22 1
+text3 CODE 0 135E 135E 4 1
+text4 CODE 0 108C 108C 4A 1
+text5 CODE 0 132A 132A E 1
+text6 CODE 0 1362 1362 4 1
+text7 CODE 0 12EE 12EE 16 1
+text8 CODE 0 1304 1304 14 1
+text9 CODE 0 12BE 12BE 18 1
+text10 CODE 0 1358 1358 6 1
+text11 CODE 0 1246 1246 20 1
+text12 CODE 0 6E8 6E8 112 1
+text13 CODE 0 11D8 11D8 26 1
+text14 CODE 0 1008 1008 84 1
+text15 CODE 0 9E 9E 29E 1
+text16 CODE 0 5A4 5A4 144 1
+text17 CODE 0 33C 33C 268 1
+text18 CODE 0 1338 1338 C 1
+text19 CODE 0 114C 114C 30 1
+text20 CODE 0 EDC EDC 9C 1
+text21 CODE 0 1344 1344 A 1
+text22 CODE 0 7FA 7FA 104 1
+text23 CODE 0 117C 117C 30 1
+text24 CODE 0 D80 D80 AE 1
+text25 CODE 0 9F8 9F8 F4 1
+text26 CODE 0 BDE BDE E6 1
+text27 CODE 0 12A4 12A4 1A 1
+text28 CODE 0 8FE 8FE FA 1
+text29 CODE 0 11AC 11AC 2C 1
+text30 CODE 0 CC4 CC4 BC 1
+text31 CODE 0 F78 F78 90 1
+text32 CODE 0 1114 1114 38 1
+text33 CODE 0 E2E E2E AE 1
+text34 CODE 0 134E 134E A 1
+text35 CODE 0 1366 1366 4 1
+text36 CODE 0 12D6 12D6 18 1
+text38 CODE 0 1266 1266 20 1
+text39 CODE 0 11FE 11FE 26 1
+text40 CODE 0 1370 1370 2 1
+text41 CODE 0 AEC AEC F2 1
+text42 CODE 0 136A 136A 4 1
+nvBANK0 BANK0 1 B7 B7 2 1
+idataCOMRAM CODE 0 136E 136E 2 1
+cstackCOMRAM COMRAM 1 1 1 3F 1
+cstackBANK0 BANK0 1 60 60 2D 1
+temp COMRAM 1 50 50 1 1
+bssBANK0 BANK0 1 8D 8D 2A 1
 intcode CODE 0 8 8 92 1
-bssCOMRAM COMRAM 1 16 16 14 1
+dataCOMRAM COMRAM 1 4E 4E 2 1
+bssCOMRAM COMRAM 1 40 40 E 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 60-F37 1
+RAM B9-F37 1
 SFR F38-FFF 1
-BANK0 60-FF 1
+BANK0 B9-FF 1
 BANK1 100-1FF 1
 BANK2 200-2FF 1
 BANK3 300-3FF 1
@@ -67,21 +88,22 @@ BANK7 700-7FF 1
 BANK8 800-8FF 1
 BANK9 900-9FF 1
 CONST 4-7 1
-CONST 3B8-FFFF 1
-STACK 60-F37 1
-SMALLCONST 1000-FFFF 1
+CONST 1372-FFFF 1
+STACK B9-F37 1
+SMALLCONST 1372-FFFF 1
 CODE 4-7 1
-CODE 3B8-FFFF 1
+CODE 1372-FFFF 1
 BANK10 A00-AFF 1
 BANK11 B00-BFF 1
 BANK12 C00-CFF 1
 BANK13 D00-DFF 1
 BANK14 E00-EFF 1
 BANK15 F00-F37 1
-BIGRAM 2D-F37 1
-COMRAM 2D-5F 1
+BIGRAM 51-5F 1
+BIGRAM B9-F37 1
+COMRAM 51-5F 1
 EEDATA F00000-F003FF 1
-MEDIUMCONST 1000-FFFF 1
+MEDIUMCONST 1372-FFFF 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -96,190 +118,459 @@ MEDIUMCONST 1000-FFFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\HardwareReset.X.production.obj
-8 intcode CODE >87:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/adc.c
-8 intcode CODE >57:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/interrupt_manager.c
-42 intcode CODE >60:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/interrupt_manager.c
-4C intcode CODE >62:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/interrupt_manager.c
-50 intcode CODE >63:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/interrupt_manager.c
-52 intcode CODE >64:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/interrupt_manager.c
-5A intcode CODE >66:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/interrupt_manager.c
-5E intcode CODE >72:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/interrupt_manager.c
-3B2 text25 CODE >129:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/adc.c
-3B2 text25 CODE >132:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/adc.c
-3B4 text25 CODE >133:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/adc.c
-9E text24 CODE >32:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-9E text24 CODE >34:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-A2 text24 CODE >41:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-B2 text24 CODE >43:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-CA text24 CODE >44:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-DA text24 CODE >46:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-E2 text24 CODE >48:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-E4 text24 CODE >49:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-E6 text24 CODE >50:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-EE text24 CODE >51:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-EE text24 CODE >52:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-F6 text24 CODE >55:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-106 text24 CODE >57:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-116 text24 CODE >59:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-11E text24 CODE >60:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-126 text24 CODE >62:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-12E text24 CODE >63:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-130 text24 CODE >64:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-132 text24 CODE >66:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-132 text24 CODE >67:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-13A text24 CODE >68:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-13A text24 CODE >69:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-3B6 text23 CODE >155:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/tmr2.c
-3B6 text23 CODE >158:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/tmr2.c
-282 text22 CODE >141:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/tmr2.c
-282 text22 CODE >145:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/tmr2.c
-28A text22 CODE >147:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/tmr2.c
-262 text21 CODE >123:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/tmr2.c
-262 text21 CODE >127:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/tmr2.c
-264 text21 CODE >130:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/tmr2.c
-274 text21 CODE >134:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/tmr2.c
-278 text21 CODE >137:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/tmr2.c
-328 text19 CODE >81:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/adc.c
-32A text19 CODE >84:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/adc.c
-33C text19 CODE >86:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/adc.c
-33E text19 CODE >87:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/adc.c
-3AE text18 CODE >89:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/adc.c
-3AE text18 CODE >92:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/adc.c
-3B0 text18 CODE >93:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/adc.c
-396 text17 CODE >151:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/tmr2.c
-396 text17 CODE >152:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/tmr2.c
-39E text17 CODE >153:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/tmr2.c
-2C0 text16 CODE >14:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-2C0 text16 CODE >16:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-2CC text16 CODE >18:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-2D2 text16 CODE >20:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-2D4 text16 CODE >21:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-2D6 text16 CODE >23:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-2DA text16 CODE >25:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-1EA text15 CODE >108:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/adc.c
-1EC text15 CODE >111:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/adc.c
-1FE text15 CODE >114:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/adc.c
-200 text15 CODE >117:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/adc.c
-202 text15 CODE >120:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/adc.c
-202 text15 CODE >122:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/adc.c
-206 text15 CODE >124:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/adc.c
-38A text14 CODE >97:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/eusart1.c
-38C text14 CODE >99:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/eusart1.c
-38C text14 CODE >101:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/eusart1.c
-390 text14 CODE >103:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/eusart1.c
-394 text14 CODE >104:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/eusart1.c
-21A text13 CODE >15:C:\Program Files\Microchip\xc8\v1.41\sources\common\Umul16.c
-21A text13 CODE >37:C:\Program Files\Microchip\xc8\v1.41\sources\common\Umul16.c
-226 text13 CODE >38:C:\Program Files\Microchip\xc8\v1.41\sources\common\Umul16.c
-22E text13 CODE >39:C:\Program Files\Microchip\xc8\v1.41\sources\common\Umul16.c
-236 text13 CODE >52:C:\Program Files\Microchip\xc8\v1.41\sources\common\Umul16.c
-144 text12 CODE >81:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-144 text12 CODE >87:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-152 text12 CODE >89:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-16C text12 CODE >90:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-186 text12 CODE >92:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-18C text12 CODE >93:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-192 text12 CODE >94:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-198 text12 CODE >95:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-19E text12 CODE >97:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-2F6 text11 CODE >73:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-2F6 text11 CODE >75:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-302 text11 CODE >77:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-306 text11 CODE >78:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-3A0 text10 CODE >27:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-3A0 text10 CODE >29:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-3A4 text10 CODE >30:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.c
-310 text9 CODE >58:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/adc.c
-310 text9 CODE >63:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/adc.c
-314 text9 CODE >66:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/adc.c
-318 text9 CODE >69:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/adc.c
-31C text9 CODE >72:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/adc.c
-320 text9 CODE >75:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/adc.c
-324 text9 CODE >78:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/adc.c
-326 text9 CODE >79:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/adc.c
-356 text8 CODE >57:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/ccp5.c
-356 text8 CODE >60:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/ccp5.c
-35C text8 CODE >62:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/ccp5.c
-362 text8 CODE >64:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/ccp5.c
-368 text8 CODE >65:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/ccp5.c
-340 text7 CODE >55:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/eusart1.c
-340 text7 CODE >60:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/eusart1.c
-344 text7 CODE >63:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/eusart1.c
-348 text7 CODE >66:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/eusart1.c
-34C text7 CODE >69:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/eusart1.c
-350 text7 CODE >72:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/eusart1.c
-354 text7 CODE >74:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/eusart1.c
-3AA text6 CODE >51:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/interrupt_manager.c
-3AA text6 CODE >54:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/interrupt_manager.c
-3AC text6 CODE >55:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/interrupt_manager.c
-37C text5 CODE >123:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/mcc.c
-37C text5 CODE >126:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/mcc.c
-380 text5 CODE >128:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/mcc.c
-384 text5 CODE >130:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/mcc.c
-388 text5 CODE >133:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/mcc.c
-1A0 text4 CODE >51:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/pin_manager.c
-1A0 text4 CODE >56:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/pin_manager.c
-1A4 text4 CODE >57:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/pin_manager.c
-1A8 text4 CODE >58:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/pin_manager.c
-1AC text4 CODE >59:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/pin_manager.c
-1B0 text4 CODE >60:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/pin_manager.c
-1B4 text4 CODE >65:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/pin_manager.c
-1B8 text4 CODE >66:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/pin_manager.c
-1BC text4 CODE >67:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/pin_manager.c
-1BE text4 CODE >68:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/pin_manager.c
-1C2 text4 CODE >69:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/pin_manager.c
-1C6 text4 CODE >74:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/pin_manager.c
-1CC text4 CODE >75:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/pin_manager.c
-1D2 text4 CODE >76:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/pin_manager.c
-1D8 text4 CODE >77:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/pin_manager.c
-1DE text4 CODE >78:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/pin_manager.c
-1E4 text4 CODE >83:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/pin_manager.c
-1E6 text4 CODE >84:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/pin_manager.c
-1E8 text4 CODE >91:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/pin_manager.c
-3A6 text3 CODE >91:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/tmr2.c
-3A6 text3 CODE >94:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/tmr2.c
-3A8 text3 CODE >95:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/tmr2.c
-240 text2 CODE >65:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/tmr2.c
-240 text2 CODE >70:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/tmr2.c
-244 text2 CODE >73:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/tmr2.c
-248 text2 CODE >76:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/tmr2.c
-24C text2 CODE >79:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/tmr2.c
-24E text2 CODE >82:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/tmr2.c
-250 text2 CODE >85:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/tmr2.c
-25C text2 CODE >88:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/tmr2.c
-260 text2 CODE >89:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/tmr2.c
-2A2 text1 CODE >111:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/mcc.c
-2A2 text1 CODE >114:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/mcc.c
-2A6 text1 CODE >115:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/mcc.c
-2AA text1 CODE >116:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/mcc.c
-2AE text1 CODE >117:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/mcc.c
-2B2 text1 CODE >118:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/mcc.c
-2B6 text1 CODE >119:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/mcc.c
-2BA text1 CODE >120:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/mcc.c
-2BE text1 CODE >121:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\mcc_generated_files/mcc.c
-36A text0 CODE >56:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\main.c
-36A text0 CODE >59:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\main.c
-36E text0 CODE >79:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\main.c
-370 text0 CODE >82:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\main.c
-372 text0 CODE >84:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\main.c
-376 text0 CODE >95:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\main.c
-37A text0 CODE >93:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\main.c
-2DC cinit CODE >4822:C:\Users\ARIELL~1\AppData\Local\Temp\s4us.
-2DC cinit CODE >4824:C:\Users\ARIELL~1\AppData\Local\Temp\s4us.
-2DC cinit CODE >4827:C:\Users\ARIELL~1\AppData\Local\Temp\s4us.
-2DC cinit CODE >4857:C:\Users\ARIELL~1\AppData\Local\Temp\s4us.
-2E0 cinit CODE >4858:C:\Users\ARIELL~1\AppData\Local\Temp\s4us.
-2E2 cinit CODE >4859:C:\Users\ARIELL~1\AppData\Local\Temp\s4us.
-2E2 cinit CODE >4860:C:\Users\ARIELL~1\AppData\Local\Temp\s4us.
-2E4 cinit CODE >4861:C:\Users\ARIELL~1\AppData\Local\Temp\s4us.
-2E6 cinit CODE >4862:C:\Users\ARIELL~1\AppData\Local\Temp\s4us.
-2E8 cinit CODE >4868:C:\Users\ARIELL~1\AppData\Local\Temp\s4us.
-2E8 cinit CODE >4870:C:\Users\ARIELL~1\AppData\Local\Temp\s4us.
-2EA cinit CODE >4871:C:\Users\ARIELL~1\AppData\Local\Temp\s4us.
-2EC cinit CODE >4873:C:\Users\ARIELL~1\AppData\Local\Temp\s4us.
-2EE cinit CODE >4874:C:\Users\ARIELL~1\AppData\Local\Temp\s4us.
-2F0 cinit CODE >4875:C:\Users\ARIELL~1\AppData\Local\Temp\s4us.
-2F2 cinit CODE >4876:C:\Users\ARIELL~1\AppData\Local\Temp\s4us.
+8 intcode CODE >87:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
+8 intcode CODE >57:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/interrupt_manager.c
+42 intcode CODE >60:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/interrupt_manager.c
+4C intcode CODE >62:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/interrupt_manager.c
+50 intcode CODE >63:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/interrupt_manager.c
+52 intcode CODE >64:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/interrupt_manager.c
+5A intcode CODE >66:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/interrupt_manager.c
+5E intcode CODE >72:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/interrupt_manager.c
+136A text42 CODE >129:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
+136A text42 CODE >132:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
+136C text42 CODE >133:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
+AEC text41 CODE >47:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+AEC text41 CODE >49:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+AF2 text41 CODE >56:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+B02 text41 CODE >58:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+B1A text41 CODE >59:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+B2A text41 CODE >61:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+B32 text41 CODE >63:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+B34 text41 CODE >64:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+B36 text41 CODE >65:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+B3E text41 CODE >66:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+B3E text41 CODE >67:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+B46 text41 CODE >70:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+B56 text41 CODE >72:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+B66 text41 CODE >74:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+B6E text41 CODE >75:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+B76 text41 CODE >77:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+B7E text41 CODE >78:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+B80 text41 CODE >79:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+B82 text41 CODE >81:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+B82 text41 CODE >82:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+B8A text41 CODE >83:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+B8A text41 CODE >84:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+B92 text41 CODE >87:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+B9E text41 CODE >89:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+BA0 text41 CODE >90:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+BA2 text41 CODE >94:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+BAE text41 CODE >96:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+BB0 text41 CODE >97:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+BB2 text41 CODE >98:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+BC4 text41 CODE >100:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+BC6 text41 CODE >101:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+BC8 text41 CODE >102:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+BD4 text41 CODE >104:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+BDC text41 CODE >106:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+1370 text40 CODE >155:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/tmr2.c
+1370 text40 CODE >158:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/tmr2.c
+11FE text39 CODE >141:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/tmr2.c
+11FE text39 CODE >145:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/tmr2.c
+120A text39 CODE >147:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/tmr2.c
+1266 text38 CODE >123:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/tmr2.c
+1266 text38 CODE >127:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/tmr2.c
+1268 text38 CODE >130:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/tmr2.c
+1278 text38 CODE >134:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/tmr2.c
+127C text38 CODE >137:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/tmr2.c
+12D6 text36 CODE >81:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
+12D8 text36 CODE >84:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
+12EA text36 CODE >86:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
+12EC text36 CODE >87:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
+1366 text35 CODE >89:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
+1366 text35 CODE >92:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
+1368 text35 CODE >93:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
+134E text34 CODE >95:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+134E text34 CODE >97:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+1356 text34 CODE >98:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+E2E text33 CODE >62:C:\Program Files\Microchip\xc8\v1.41\sources\common\float.c
+E2E text33 CODE >64:C:\Program Files\Microchip\xc8\v1.41\sources\common\float.c
+E3E text33 CODE >65:C:\Program Files\Microchip\xc8\v1.41\sources\common\float.c
+E4C text33 CODE >67:C:\Program Files\Microchip\xc8\v1.41\sources\common\float.c
+E4E text33 CODE >68:C:\Program Files\Microchip\xc8\v1.41\sources\common\float.c
+E56 text33 CODE >66:C:\Program Files\Microchip\xc8\v1.41\sources\common\float.c
+E74 text33 CODE >71:C:\Program Files\Microchip\xc8\v1.41\sources\common\float.c
+E76 text33 CODE >72:C:\Program Files\Microchip\xc8\v1.41\sources\common\float.c
+E82 text33 CODE >73:C:\Program Files\Microchip\xc8\v1.41\sources\common\float.c
+E8A text33 CODE >70:C:\Program Files\Microchip\xc8\v1.41\sources\common\float.c
+EA8 text33 CODE >76:C:\Program Files\Microchip\xc8\v1.41\sources\common\float.c
+EAA text33 CODE >77:C:\Program Files\Microchip\xc8\v1.41\sources\common\float.c
+EB2 text33 CODE >75:C:\Program Files\Microchip\xc8\v1.41\sources\common\float.c
+EBC text33 CODE >79:C:\Program Files\Microchip\xc8\v1.41\sources\common\float.c
+EBE text33 CODE >80:C:\Program Files\Microchip\xc8\v1.41\sources\common\float.c
+EC0 text33 CODE >81:C:\Program Files\Microchip\xc8\v1.41\sources\common\float.c
+EC4 text33 CODE >82:C:\Program Files\Microchip\xc8\v1.41\sources\common\float.c
+EC8 text33 CODE >83:C:\Program Files\Microchip\xc8\v1.41\sources\common\float.c
+ECC text33 CODE >84:C:\Program Files\Microchip\xc8\v1.41\sources\common\float.c
+ECE text33 CODE >85:C:\Program Files\Microchip\xc8\v1.41\sources\common\float.c
+1114 text32 CODE >32:C:\Program Files\Microchip\xc8\v1.41\sources\common\awtoft.c
+1114 text32 CODE >36:C:\Program Files\Microchip\xc8\v1.41\sources\common\awtoft.c
+1118 text32 CODE >37:C:\Program Files\Microchip\xc8\v1.41\sources\common\awtoft.c
+111C text32 CODE >38:C:\Program Files\Microchip\xc8\v1.41\sources\common\awtoft.c
+1124 text32 CODE >39:C:\Program Files\Microchip\xc8\v1.41\sources\common\awtoft.c
+1128 text32 CODE >41:C:\Program Files\Microchip\xc8\v1.41\sources\common\awtoft.c
+F78 text31 CODE >4:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftge.c
+F78 text31 CODE >6:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftge.c
+F7C text31 CODE >7:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftge.c
+FA8 text31 CODE >8:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftge.c
+FAC text31 CODE >9:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftge.c
+FD8 text31 CODE >10:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftge.c
+FE4 text31 CODE >11:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftge.c
+FF0 text31 CODE >12:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftge.c
+CC4 text30 CODE >109:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+CC4 text30 CODE >111:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+CDC text30 CODE >112:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+CF4 text30 CODE >113:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+D3A text30 CODE >114:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+11AC text29 CODE >99:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+11AC text29 CODE >101:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+11BC text29 CODE >102:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+11CE text29 CODE >105:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+11D2 text29 CODE >107:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+11D6 text29 CODE >108:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+8FE text28 CODE >83:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+8FE text28 CODE >85:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+912 text28 CODE >86:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+91A text28 CODE >87:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+922 text28 CODE >89:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+948 text28 CODE >90:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+96C text28 CODE >92:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+9B2 text28 CODE >93:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+12A4 text27 CODE >51:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+12A4 text27 CODE >53:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+12BC text27 CODE >54:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+BDE text26 CODE >54:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftdiv.c
+BDE text26 CODE >63:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftdiv.c
+BF8 text26 CODE >64:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftdiv.c
+C06 text26 CODE >65:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftdiv.c
+C20 text26 CODE >66:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftdiv.c
+C2E text26 CODE >67:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftdiv.c
+C3A text26 CODE >68:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftdiv.c
+C40 text26 CODE >69:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftdiv.c
+C44 text26 CODE >70:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftdiv.c
+C48 text26 CODE >71:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftdiv.c
+C4C text26 CODE >72:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftdiv.c
+C4E text26 CODE >73:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftdiv.c
+C5A text26 CODE >74:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftdiv.c
+C5C text26 CODE >75:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftdiv.c
+C68 text26 CODE >76:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftdiv.c
+C6C text26 CODE >78:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftdiv.c
+C74 text26 CODE >79:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftdiv.c
+C84 text26 CODE >80:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftdiv.c
+C90 text26 CODE >81:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftdiv.c
+C92 text26 CODE >82:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftdiv.c
+C92 text26 CODE >83:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftdiv.c
+C9A text26 CODE >84:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftdiv.c
+C9E text26 CODE >85:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftdiv.c
+9F8 text25 CODE >62:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftmul.c
+9F8 text25 CODE >67:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftmul.c
+A12 text25 CODE >68:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftmul.c
+A20 text25 CODE >69:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftmul.c
+A3A text25 CODE >70:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftmul.c
+A48 text25 CODE >71:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftmul.c
+A4E text25 CODE >72:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftmul.c
+A52 text25 CODE >73:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftmul.c
+A56 text25 CODE >74:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftmul.c
+A5A text25 CODE >75:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftmul.c
+A5C text25 CODE >77:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftmul.c
+A5E text25 CODE >78:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftmul.c
+A6A text25 CODE >79:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftmul.c
+A76 text25 CODE >134:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftmul.c
+A7A text25 CODE >136:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftmul.c
+A7E text25 CODE >137:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftmul.c
+A8A text25 CODE >138:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftmul.c
+A92 text25 CODE >139:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftmul.c
+A9A text25 CODE >140:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftmul.c
+A9E text25 CODE >143:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftmul.c
+AA2 text25 CODE >145:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftmul.c
+AA6 text25 CODE >146:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftmul.c
+AB2 text25 CODE >147:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftmul.c
+ABA text25 CODE >148:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftmul.c
+AC2 text25 CODE >149:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftmul.c
+AC6 text25 CODE >156:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftmul.c
+D80 text24 CODE >73:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+D80 text24 CODE >75:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+D94 text24 CODE >77:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+DD4 text24 CODE >78:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+DFC text24 CODE >79:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+E24 text24 CODE >80:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+117C text23 CODE >15:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftneg.c
+117C text23 CODE >17:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftneg.c
+118C text23 CODE >18:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftneg.c
+119E text23 CODE >19:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftneg.c
+11AA text23 CODE >20:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftneg.c
+7FA text22 CODE >55:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+7FA text22 CODE >59:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+80C text22 CODE >61:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+840 text22 CODE >62:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+84C text22 CODE >63:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+874 text22 CODE >64:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+89C text22 CODE >66:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+8A8 text22 CODE >68:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+8C4 text22 CODE >69:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+8E0 text22 CODE >70:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+1344 text21 CODE >151:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/tmr2.c
+1344 text21 CODE >152:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/tmr2.c
+134C text21 CODE >153:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/tmr2.c
+EDC text20 CODE >22:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+EDC text20 CODE >24:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+EE8 text20 CODE >26:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+EEE text20 CODE >28:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+EF0 text20 CODE >29:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+EF2 text20 CODE >31:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+EFE text20 CODE >32:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+F38 text20 CODE >33:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+F46 text20 CODE >34:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+F5A text20 CODE >35:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+F66 text20 CODE >36:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+F72 text20 CODE >38:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+F76 text20 CODE >40:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+114C text19 CODE >108:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
+114E text19 CODE >111:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
+1160 text19 CODE >114:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
+1162 text19 CODE >117:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
+1164 text19 CODE >120:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
+1164 text19 CODE >122:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
+1168 text19 CODE >124:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
+1338 text18 CODE >97:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/eusart1.c
+133A text18 CODE >99:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/eusart1.c
+133A text18 CODE >101:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/eusart1.c
+133E text18 CODE >103:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/eusart1.c
+1342 text18 CODE >104:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/eusart1.c
+33C text17 CODE >86:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+33C text17 CODE >90:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+35A text17 CODE >91:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+378 text17 CODE >92:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+3A4 text17 CODE >93:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+3B2 text17 CODE >94:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+3DE text17 CODE >95:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+3EC text17 CODE >96:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+3F2 text17 CODE >97:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+3F8 text17 CODE >98:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+3FC text17 CODE >99:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+402 text17 CODE >100:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+406 text17 CODE >101:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+40A text17 CODE >102:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+41C text17 CODE >103:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+420 text17 CODE >104:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+432 text17 CODE >106:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+43E text17 CODE >110:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+448 text17 CODE >111:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+44C text17 CODE >112:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+46C text17 CODE >114:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+476 text17 CODE >115:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+47A text17 CODE >113:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+488 text17 CODE >117:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+494 text17 CODE >121:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+49E text17 CODE >122:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+4A2 text17 CODE >123:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+4C2 text17 CODE >125:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+4CC text17 CODE >126:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+4D0 text17 CODE >124:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+4DC text17 CODE >129:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+4E2 text17 CODE >131:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+4F4 text17 CODE >132:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+506 text17 CODE >133:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+506 text17 CODE >134:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+50C text17 CODE >136:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+51E text17 CODE >137:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+530 text17 CODE >139:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+536 text17 CODE >140:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+54E text17 CODE >141:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+554 text17 CODE >142:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+566 text17 CODE >143:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+578 text17 CODE >144:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+57E text17 CODE >146:C:\Program Files\Microchip\xc8\v1.41\sources\common\ftadd.c
+5A4 text16 CODE >44:C:\Program Files\Microchip\xc8\v1.41\sources\common\fttol.c
+5A4 text16 CODE >49:C:\Program Files\Microchip\xc8\v1.41\sources\common\fttol.c
+5CA text16 CODE >50:C:\Program Files\Microchip\xc8\v1.41\sources\common\fttol.c
+5DE text16 CODE >51:C:\Program Files\Microchip\xc8\v1.41\sources\common\fttol.c
+612 text16 CODE >52:C:\Program Files\Microchip\xc8\v1.41\sources\common\fttol.c
+616 text16 CODE >53:C:\Program Files\Microchip\xc8\v1.41\sources\common\fttol.c
+628 text16 CODE >54:C:\Program Files\Microchip\xc8\v1.41\sources\common\fttol.c
+644 text16 CODE >55:C:\Program Files\Microchip\xc8\v1.41\sources\common\fttol.c
+64A text16 CODE >56:C:\Program Files\Microchip\xc8\v1.41\sources\common\fttol.c
+650 text16 CODE >57:C:\Program Files\Microchip\xc8\v1.41\sources\common\fttol.c
+65C text16 CODE >58:C:\Program Files\Microchip\xc8\v1.41\sources\common\fttol.c
+670 text16 CODE >60:C:\Program Files\Microchip\xc8\v1.41\sources\common\fttol.c
+67C text16 CODE >61:C:\Program Files\Microchip\xc8\v1.41\sources\common\fttol.c
+682 text16 CODE >62:C:\Program Files\Microchip\xc8\v1.41\sources\common\fttol.c
+684 text16 CODE >63:C:\Program Files\Microchip\xc8\v1.41\sources\common\fttol.c
+68C text16 CODE >64:C:\Program Files\Microchip\xc8\v1.41\sources\common\fttol.c
+6A0 text16 CODE >66:C:\Program Files\Microchip\xc8\v1.41\sources\common\fttol.c
+6AC text16 CODE >67:C:\Program Files\Microchip\xc8\v1.41\sources\common\fttol.c
+6B0 text16 CODE >65:C:\Program Files\Microchip\xc8\v1.41\sources\common\fttol.c
+6BA text16 CODE >70:C:\Program Files\Microchip\xc8\v1.41\sources\common\fttol.c
+6C4 text16 CODE >71:C:\Program Files\Microchip\xc8\v1.41\sources\common\fttol.c
+6D6 text16 CODE >72:C:\Program Files\Microchip\xc8\v1.41\sources\common\fttol.c
+9E text15 CODE >22:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+9E text15 CODE >26:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+A6 text15 CODE >27:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+B8 text15 CODE >33:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+FC text15 CODE >34:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+140 text15 CODE >35:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+17A text15 CODE >36:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+1BE text15 CODE >37:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+202 text15 CODE >40:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+2A6 text15 CODE >41:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+2D0 text15 CODE >42:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+2F8 text15 CODE >45:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+310 text15 CODE >48:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\PID.c
+1008 text14 CODE >8:C:\Program Files\Microchip\xc8\v1.41\sources\common\awdiv.c
+1008 text14 CODE >14:C:\Program Files\Microchip\xc8\v1.41\sources\common\awdiv.c
+100C text14 CODE >15:C:\Program Files\Microchip\xc8\v1.41\sources\common\awdiv.c
+1010 text14 CODE >16:C:\Program Files\Microchip\xc8\v1.41\sources\common\awdiv.c
+1018 text14 CODE >17:C:\Program Files\Microchip\xc8\v1.41\sources\common\awdiv.c
+101C text14 CODE >19:C:\Program Files\Microchip\xc8\v1.41\sources\common\awdiv.c
+1020 text14 CODE >20:C:\Program Files\Microchip\xc8\v1.41\sources\common\awdiv.c
+1028 text14 CODE >21:C:\Program Files\Microchip\xc8\v1.41\sources\common\awdiv.c
+102C text14 CODE >23:C:\Program Files\Microchip\xc8\v1.41\sources\common\awdiv.c
+1034 text14 CODE >24:C:\Program Files\Microchip\xc8\v1.41\sources\common\awdiv.c
+103C text14 CODE >25:C:\Program Files\Microchip\xc8\v1.41\sources\common\awdiv.c
+1040 text14 CODE >26:C:\Program Files\Microchip\xc8\v1.41\sources\common\awdiv.c
+1042 text14 CODE >27:C:\Program Files\Microchip\xc8\v1.41\sources\common\awdiv.c
+1048 text14 CODE >28:C:\Program Files\Microchip\xc8\v1.41\sources\common\awdiv.c
+104A text14 CODE >26:C:\Program Files\Microchip\xc8\v1.41\sources\common\awdiv.c
+104E text14 CODE >31:C:\Program Files\Microchip\xc8\v1.41\sources\common\awdiv.c
+1054 text14 CODE >32:C:\Program Files\Microchip\xc8\v1.41\sources\common\awdiv.c
+1060 text14 CODE >33:C:\Program Files\Microchip\xc8\v1.41\sources\common\awdiv.c
+1068 text14 CODE >34:C:\Program Files\Microchip\xc8\v1.41\sources\common\awdiv.c
+106A text14 CODE >36:C:\Program Files\Microchip\xc8\v1.41\sources\common\awdiv.c
+1070 text14 CODE >37:C:\Program Files\Microchip\xc8\v1.41\sources\common\awdiv.c
+1074 text14 CODE >39:C:\Program Files\Microchip\xc8\v1.41\sources\common\awdiv.c
+107A text14 CODE >40:C:\Program Files\Microchip\xc8\v1.41\sources\common\awdiv.c
+1082 text14 CODE >41:C:\Program Files\Microchip\xc8\v1.41\sources\common\awdiv.c
+11D8 text13 CODE >15:C:\Program Files\Microchip\xc8\v1.41\sources\common\Umul16.c
+11D8 text13 CODE >37:C:\Program Files\Microchip\xc8\v1.41\sources\common\Umul16.c
+11E4 text13 CODE >38:C:\Program Files\Microchip\xc8\v1.41\sources\common\Umul16.c
+11EC text13 CODE >39:C:\Program Files\Microchip\xc8\v1.41\sources\common\Umul16.c
+11F4 text13 CODE >52:C:\Program Files\Microchip\xc8\v1.41\sources\common\Umul16.c
+6E8 text12 CODE >117:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+6E8 text12 CODE >123:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+6F6 text12 CODE >124:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+736 text12 CODE >125:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+77A text12 CODE >127:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+7A6 text12 CODE >129:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+7C0 text12 CODE >130:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+7DC text12 CODE >132:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+7E2 text12 CODE >133:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+7EA text12 CODE >134:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+7F2 text12 CODE >135:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+7F8 text12 CODE >137:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+1246 text11 CODE >109:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+1246 text11 CODE >111:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+1256 text11 CODE >113:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+125A text11 CODE >114:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+1358 text10 CODE >42:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+1358 text10 CODE >44:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+135C text10 CODE >45:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
+12BE text9 CODE >58:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
+12BE text9 CODE >63:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
+12C2 text9 CODE >66:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
+12C6 text9 CODE >69:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
+12CA text9 CODE >72:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
+12CE text9 CODE >75:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
+12D2 text9 CODE >78:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
+12D4 text9 CODE >79:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
+1304 text8 CODE >57:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/ccp5.c
+1304 text8 CODE >60:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/ccp5.c
+130A text8 CODE >62:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/ccp5.c
+1310 text8 CODE >64:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/ccp5.c
+1316 text8 CODE >65:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/ccp5.c
+12EE text7 CODE >55:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/eusart1.c
+12EE text7 CODE >60:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/eusart1.c
+12F2 text7 CODE >63:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/eusart1.c
+12F6 text7 CODE >66:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/eusart1.c
+12FA text7 CODE >69:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/eusart1.c
+12FE text7 CODE >72:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/eusart1.c
+1302 text7 CODE >74:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/eusart1.c
+1362 text6 CODE >51:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/interrupt_manager.c
+1362 text6 CODE >54:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/interrupt_manager.c
+1364 text6 CODE >55:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/interrupt_manager.c
+132A text5 CODE >123:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/mcc.c
+132A text5 CODE >126:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/mcc.c
+132E text5 CODE >128:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/mcc.c
+1332 text5 CODE >130:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/mcc.c
+1336 text5 CODE >133:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/mcc.c
+108C text4 CODE >51:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/pin_manager.c
+108C text4 CODE >56:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/pin_manager.c
+1090 text4 CODE >57:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/pin_manager.c
+1094 text4 CODE >58:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/pin_manager.c
+1098 text4 CODE >59:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/pin_manager.c
+109C text4 CODE >60:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/pin_manager.c
+10A0 text4 CODE >65:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/pin_manager.c
+10A4 text4 CODE >66:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/pin_manager.c
+10A8 text4 CODE >67:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/pin_manager.c
+10AA text4 CODE >68:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/pin_manager.c
+10AE text4 CODE >69:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/pin_manager.c
+10B2 text4 CODE >74:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/pin_manager.c
+10B8 text4 CODE >75:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/pin_manager.c
+10BE text4 CODE >76:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/pin_manager.c
+10C4 text4 CODE >77:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/pin_manager.c
+10CA text4 CODE >78:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/pin_manager.c
+10D0 text4 CODE >83:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/pin_manager.c
+10D2 text4 CODE >84:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/pin_manager.c
+10D4 text4 CODE >91:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/pin_manager.c
+135E text3 CODE >91:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/tmr2.c
+135E text3 CODE >94:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/tmr2.c
+1360 text3 CODE >95:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/tmr2.c
+1224 text2 CODE >65:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/tmr2.c
+1224 text2 CODE >70:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/tmr2.c
+1228 text2 CODE >73:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/tmr2.c
+122C text2 CODE >76:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/tmr2.c
+1230 text2 CODE >79:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/tmr2.c
+1232 text2 CODE >82:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/tmr2.c
+1234 text2 CODE >85:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/tmr2.c
+1240 text2 CODE >88:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/tmr2.c
+1244 text2 CODE >89:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/tmr2.c
+1286 text1 CODE >111:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/mcc.c
+1286 text1 CODE >114:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/mcc.c
+128A text1 CODE >115:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/mcc.c
+128E text1 CODE >116:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/mcc.c
+1292 text1 CODE >117:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/mcc.c
+1296 text1 CODE >118:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/mcc.c
+129A text1 CODE >119:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/mcc.c
+129E text1 CODE >120:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/mcc.c
+12A2 text1 CODE >121:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/mcc.c
+1318 text0 CODE >56:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\main.c
+1318 text0 CODE >59:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\main.c
+131C text0 CODE >79:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\main.c
+131E text0 CODE >82:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\main.c
+1320 text0 CODE >84:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\main.c
+1324 text0 CODE >95:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\main.c
+1328 text0 CODE >93:C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\main.c
+10D6 cinit CODE >4876:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+10D6 cinit CODE >4878:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+10D6 cinit CODE >4881:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+10D6 cinit CODE >4952:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+10D8 cinit CODE >4953:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+10DA cinit CODE >4954:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+10DC cinit CODE >4955:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+10DE cinit CODE >4956:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+10E0 cinit CODE >4957:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+10E2 cinit CODE >4958:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+10E4 cinit CODE >4959:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+10E8 cinit CODE >4960:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+10EA cinit CODE >4961:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+10EE cinit CODE >4965:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+10F2 cinit CODE >4966:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+10F4 cinit CODE >4967:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+10F4 cinit CODE >4968:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+10F6 cinit CODE >4969:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+10F8 cinit CODE >4970:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+10FA cinit CODE >4973:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+10FE cinit CODE >4974:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+1100 cinit CODE >4975:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+1100 cinit CODE >4976:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+1102 cinit CODE >4977:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+1104 cinit CODE >4978:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+1106 cinit CODE >4984:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+1106 cinit CODE >4986:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+1108 cinit CODE >4987:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+110A cinit CODE >4989:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+110C cinit CODE >4990:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+110E cinit CODE >4991:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
+1110 cinit CODE >4992:C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -292,19 +583,25 @@ F6 text24 CODE >55:C:\Users\Ariel L\Desktop\Online System\HardwareReset.X\tasks.
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
+___awdiv@counter 1A 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
 __Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\HardwareReset.X.production.obj
 __Hspace_0 30000E 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-__Hspace_1 2D 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+__Hspace_1 B9 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __Hspace_2 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-_TempCounter 24 0 COMRAM 1 bssCOMRAM dist/default/production\HardwareReset.X.production.obj
+__end_of_PID_SetOutputLimits 9F8 0 CODE 0 text28 dist/default/production\HardwareReset.X.production.obj
+_TempCounter B2 0 BANK0 1 bssBANK0 dist/default/production\HardwareReset.X.production.obj
 __size_of_ADC_StartConversion 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+PID_Control@dInput 82 0 BANK0 1 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
+___ftdiv@exp 2F 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\HardwareReset.X.production.obj
-TMR2_ISR@CountCallBack 26 0 COMRAM 1 bssCOMRAM dist/default/production\HardwareReset.X.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\ARIELL~1\AppData\Local\Temp\s4us.obj
-_EUSART1_Initialize 340 0 CODE 0 text7 dist/default/production\HardwareReset.X.production.obj
+_lastInput 9D 0 BANK0 1 bssBANK0 dist/default/production\HardwareReset.X.production.obj
+TMR2_ISR@CountCallBack 4C 0 COMRAM 1 bssCOMRAM dist/default/production\HardwareReset.X.production.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.obj
+_EUSART1_Initialize 12EE 0 CODE 0 text7 dist/default/production\HardwareReset.X.production.obj
+___awtoft@sign 21 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\HardwareReset.X.production.obj
-__end_of_INTERRUPT_Initialize 3AE 0 CODE 0 text6 dist/default/production\HardwareReset.X.production.obj
+__end_of_INTERRUPT_Initialize 1366 0 CODE 0 text6 dist/default/production\HardwareReset.X.production.obj
 ADC_GetConversion@channel 14 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
 __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\HardwareReset.X.production.obj
 _LATA F89 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
@@ -314,39 +611,59 @@ _LATD F8C 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 _LATE F8D 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 _TMR2 FBC 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 _WPUB F61 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\ARIELL~1\AppData\Local\Temp\s4us.obj
-_main 36A 0 CODE 0 text0 dist/default/production\HardwareReset.X.production.obj
-btemp 2C 0 COMRAM 1 temp dist/default/production\HardwareReset.X.production.obj
-__end_of_ADC_GetConversion 21A 0 CODE 0 text15 dist/default/production\HardwareReset.X.production.obj
-start 9A 0 CODE 0 init C:\Users\ARIELL~1\AppData\Local\Temp\s4us.obj
+___sp 0 0 STACK 2 stack C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.obj
+_main 1318 0 CODE 0 text0 dist/default/production\HardwareReset.X.production.obj
+btemp 50 0 COMRAM 1 temp dist/default/production\HardwareReset.X.production.obj
+__end_of_ADC_GetConversion 117C 0 CODE 0 text19 dist/default/production\HardwareReset.X.production.obj
+__size_of_PID_SetTunings 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+___ftadd@f1 63 0 BANK0 1 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
+___ftadd@f2 66 0 BANK0 1 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
+start 9A 0 CODE 0 init C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.obj
+__size_of___awdiv 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+__size_of___ftadd 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+__size_of___ftdiv 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+__size_of___ftmul 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+__size_of___ftneg 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+__size_of___fttol 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __CFG_WDTEN$OFF 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\HardwareReset.X.production.obj
-__end_of_TMR2_Tick 144 0 CODE 0 text24 dist/default/production\HardwareReset.X.production.obj
+__end_of_TMR2_Tick BDE 0 CODE 0 text41 dist/default/production\HardwareReset.X.production.obj
 __CFG_DEBUG$OFF 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 ?___wmul 10 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
 __size_of_TMR2_Tick 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+___ftdiv@f1 22 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
+___ftdiv@f2 25 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
+___ftdiv@f3 2C 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
 __size_of_TempAcquisition 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-_ADC_SelectChannel 328 0 CODE 0 text19 dist/default/production\HardwareReset.X.production.obj
+__end_of_PID_SetControllerDirection 1358 0 CODE 0 text34 dist/default/production\HardwareReset.X.production.obj
+_ADC_SelectChannel 12D6 0 CODE 0 text36 dist/default/production\HardwareReset.X.production.obj
 __size_of_CCP5_Initialize 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __CFG_CCP2MX$PORTC1 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __Hpowerup 9A 0 CODE 0 powerup dist/default/production\HardwareReset.X.production.obj
-TempAcquisition@TEMPH 18 0 COMRAM 1 bssCOMRAM dist/default/production\HardwareReset.X.production.obj
-TempAcquisition@TEMPL 16 0 COMRAM 1 bssCOMRAM dist/default/production\HardwareReset.X.production.obj
-_TMR2_Initialize 240 0 CODE 0 text2 dist/default/production\HardwareReset.X.production.obj
-_TMR2_StartTimer 3A6 0 CODE 0 text3 dist/default/production\HardwareReset.X.production.obj
+TempAcquisition@TEMPH AE 0 BANK0 1 bssBANK0 dist/default/production\HardwareReset.X.production.obj
+TempAcquisition@TEMPL AC 0 BANK0 1 bssBANK0 dist/default/production\HardwareReset.X.production.obj
+TMR2_Tick@PeltierCounter 40 0 COMRAM 1 bssCOMRAM dist/default/production\HardwareReset.X.production.obj
+PID_SetMode@Mode 2B 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
+_TMR2_Initialize 1224 0 CODE 0 text2 dist/default/production\HardwareReset.X.production.obj
+_TMR2_StartTimer 135E 0 CODE 0 text3 dist/default/production\HardwareReset.X.production.obj
+___ftge@ff1 22 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
+___ftge@ff2 25 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
 __CFG_CCP3MX$PORTB5 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-_ADC_StartConversion 3AE 0 CODE 0 text18 dist/default/production\HardwareReset.X.production.obj
-__LnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/production\HardwareReset.X.production.obj
+_ADC_StartConversion 1366 0 CODE 0 text35 dist/default/production\HardwareReset.X.production.obj
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-_TMR2_Tick 9E 0 CODE 0 text24 dist/default/production\HardwareReset.X.production.obj
-__accesstop 60 0 ABS 0 - C:\Users\ARIELL~1\AppData\Local\Temp\s4us.obj
-intlevel0 0 0 CODE 0 text C:\Users\ARIELL~1\AppData\Local\Temp\s4us.obj
-intlevel1 0 0 CODE 0 text C:\Users\ARIELL~1\AppData\Local\Temp\s4us.obj
-intlevel2 0 0 CODE 0 text C:\Users\ARIELL~1\AppData\Local\Temp\s4us.obj
-intlevel3 0 0 CODE 0 text C:\Users\ARIELL~1\AppData\Local\Temp\s4us.obj
+__HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\HardwareReset.X.production.obj
+_TMR2_Tick AEC 0 CODE 0 text41 dist/default/production\HardwareReset.X.production.obj
+__accesstop 60 0 ABS 0 - C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.obj
+intlevel0 0 0 CODE 0 text C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.obj
+intlevel1 0 0 CODE 0 text C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.obj
+intlevel2 0 0 CODE 0 text C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.obj
+intlevel3 0 0 CODE 0 text C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.obj
+_TEMP_FLOAT A3 0 BANK0 1 bssBANK0 dist/default/production\HardwareReset.X.production.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\HardwareReset.X.production.obj
+_SampleTime 4E 0 COMRAM 1 dataCOMRAM dist/default/production\HardwareReset.X.production.obj
 __size_of_ADC_Initialize 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+_PID_Control 9E 0 CODE 0 text15 dist/default/production\HardwareReset.X.production.obj
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\HardwareReset.X.production.obj
 __CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __CFG_EBTR1$OFF 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
@@ -356,8 +673,13 @@ __CFG_EBTRB$OFF 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.o
 __CFG_P2BMX$PORTD2 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __Hifardata 0 0 CODE 0 ifardata dist/default/production\HardwareReset.X.production.obj
 EUSART1_Write@txData 10 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
+___awdiv@sign 1B 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production\HardwareReset.X.production.obj
+__pidataCOMRAM 136E 0 CODE 0 idataCOMRAM dist/default/production\HardwareReset.X.production.obj
+___ftmul@f1 31 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
+___ftmul@f2 34 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
 __CFG_PRICLKEN$ON 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+___ftneg@f1 60 0 BANK0 1 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
 ___wmul@multiplicand 12 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
 __CFG_FOSC$INTIO67 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 _ADCON0 FC2 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
@@ -370,48 +692,86 @@ _ANSELB F39 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 _ANSELC F3A 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 _ANSELD F3B 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 _ANSELE F3C 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\ARIELL~1\AppData\Local\Temp\s4us.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\ARIELL~1\AppData\Local\Temp\s4us.obj
+___awdiv@dividend 16 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.obj
+__LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\HardwareReset.X.production.obj
+__size_of___awtoft 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 _CCPR5H F56 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 _CCPR5L F55 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __end_of_INTERRUPT_InterruptManager 9A 0 CODE 0 intcode dist/default/production\HardwareReset.X.production.obj
 __size_of_TempUpdate 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\HardwareReset.X.production.obj
-__end_of___wmul 240 0 CODE 0 text13 dist/default/production\HardwareReset.X.production.obj
+__end_of___ftge 1008 0 CODE 0 text31 dist/default/production\HardwareReset.X.production.obj
+__end_of___wmul 11FE 0 CODE 0 text13 dist/default/production\HardwareReset.X.production.obj
+_TempAcquisition$1502 8B 0 BANK0 1 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\HardwareReset.X.production.obj
+___fttol@f1 6F 0 BANK0 1 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
+_DutyPeltier B0 0 BANK0 1 bssBANK0 dist/default/production\HardwareReset.X.production.obj
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\HardwareReset.X.production.obj
-_ADC_GetConversion 1EA 0 CODE 0 text15 dist/default/production\HardwareReset.X.production.obj
+_ADC_GetConversion 114C 0 CODE 0 text19 dist/default/production\HardwareReset.X.production.obj
+__LnvBANK0 0 0 ABS 0 nvBANK0 dist/default/production\HardwareReset.X.production.obj
 __Hintcodelo 9A 0 CODE 0 intcodelo dist/default/production\HardwareReset.X.production.obj
-_InitHardware 2C0 0 CODE 0 text16 dist/default/production\HardwareReset.X.production.obj
+__size_of_PID_SetSampleTime 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+___awdiv@divisor 18 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
+__size_of___ftpack 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+__end_of___awdiv 108C 0 CODE 0 text14 dist/default/production\HardwareReset.X.production.obj
+__end_of___ftadd 5A4 0 CODE 0 text17 dist/default/production\HardwareReset.X.production.obj
+__end_of___ftdiv CC4 0 CODE 0 text26 dist/default/production\HardwareReset.X.production.obj
+__end_of___ftmul AEC 0 CODE 0 text25 dist/default/production\HardwareReset.X.production.obj
+__end_of___ftneg 11AC 0 CODE 0 text23 dist/default/production\HardwareReset.X.production.obj
+__end_of___fttol 6E8 0 CODE 0 text16 dist/default/production\HardwareReset.X.production.obj
+__end_of_PID_SetMode 11D8 0 CODE 0 text29 dist/default/production\HardwareReset.X.production.obj
+_PID_Control$1503 85 0 BANK0 1 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
+_InitHardware EDC 0 CODE 0 text20 dist/default/production\HardwareReset.X.production.obj
 __size_of_MainTask 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-TMR2_Tick@Hard_ON 1E 0 COMRAM 1 bssCOMRAM dist/default/production\HardwareReset.X.production.obj
-_TMR2_SetInterruptHandler 396 0 CODE 0 text17 dist/default/production\HardwareReset.X.production.obj
-__HnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/production\HardwareReset.X.production.obj
+PID_SetSampleTime@ratio 62 0 BANK0 1 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
+__LidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production\HardwareReset.X.production.obj
+TMR2_Tick@Hard_ON 46 0 COMRAM 1 bssCOMRAM dist/default/production\HardwareReset.X.production.obj
+_TMR2_SetInterruptHandler 1344 0 CODE 0 text21 dist/default/production\HardwareReset.X.production.obj
 __size_of_TMR2_Initialize 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __size_of_TMR2_StartTimer 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 _INTCON2bits FF1 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __Lintcodelo 9A 0 CODE 0 intcodelo dist/default/production\HardwareReset.X.production.obj
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-_PIN_MANAGER_Initialize 1A0 0 CODE 0 text4 dist/default/production\HardwareReset.X.production.obj
-start_initialization 2DC 0 CODE 0 cinit dist/default/production\HardwareReset.X.production.obj
+_PIN_MANAGER_Initialize 108C 0 CODE 0 text4 dist/default/production\HardwareReset.X.production.obj
+start_initialization 10D6 0 CODE 0 cinit dist/default/production\HardwareReset.X.production.obj
 __CFG_PBADEN$ON 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-__end_of_ADC_StartConversion 3B2 0 CODE 0 text18 dist/default/production\HardwareReset.X.production.obj
+__end_of_ADC_StartConversion 136A 0 CODE 0 text35 dist/default/production\HardwareReset.X.production.obj
 _OSCCON FD3 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\HardwareReset.X.production.obj
-_ADC_ISR 3B2 0 CODE 0 text25 dist/default/production\HardwareReset.X.production.obj
+___awtoft 1114 0 CODE 0 text32 dist/default/production\HardwareReset.X.production.obj
+_Output A8 0 BANK0 1 bssBANK0 dist/default/production\HardwareReset.X.production.obj
+_ADC_ISR 136A 0 CODE 0 text42 dist/default/production\HardwareReset.X.production.obj
 ___rparam_used 1 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+PID_SetControllerDirection@Direction 10 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
 _RCREG1 FAE 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 _RCSTA1 FAB 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-__end_of_SYSTEM_Initialize 2C0 0 CODE 0 text1 dist/default/production\HardwareReset.X.production.obj
+__end_of_SYSTEM_Initialize 12A4 0 CODE 0 text1 dist/default/production\HardwareReset.X.production.obj
 __CFG_WDTPS$32768 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+__size_of_PID_Initialize 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+PID_SetMode@newAuto 2D 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
+PID_SetTunings@Kd 69 0 BANK0 1 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
+PID_SetTunings@Ki 66 0 BANK0 1 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
+PID_SetTunings@Kp 63 0 BANK0 1 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
+__end_of___awtoft 114C 0 CODE 0 text32 dist/default/production\HardwareReset.X.production.obj
 _SPBRG1 FAF 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+__pcstackBANK0 60 0 BANK0 1 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
+___fttol@exp1 7D 0 BANK0 1 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
+___fttol@lval 79 0 BANK0 1 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
 __size_of_InitHardware 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+__size_of_PID_SetControllerDirection 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 _TXREG1 FAD 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 _TXSTA1 FAC 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+___ftpack E2E 0 CODE 0 text33 dist/default/production\HardwareReset.X.production.obj
 TMR2_SetInterruptHandler@InterruptHandler 10 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
-_MainTask 3A0 0 CODE 0 text10 dist/default/production\HardwareReset.X.production.obj
+_MainTask 1358 0 CODE 0 text10 dist/default/production\HardwareReset.X.production.obj
+___ftpack@arg 10 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
+___ftpack@exp 13 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
 __size_of_EUSART1_Initialize 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-_EUSART1_Write 38A 0 CODE 0 text14 dist/default/production\HardwareReset.X.production.obj
+__end_of___ftpack EDC 0 CODE 0 text33 dist/default/production\HardwareReset.X.production.obj
+PID_SetPoint@newSetPoint 22 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
+_EUSART1_Write 1338 0 CODE 0 text18 dist/default/production\HardwareReset.X.production.obj
 __Hbank0 0 0 ABS 0 bank0 dist/default/production\HardwareReset.X.production.obj
 __Hbank1 0 0 ABS 0 bank1 dist/default/production\HardwareReset.X.production.obj
 __Hbank2 0 0 ABS 0 bank2 dist/default/production\HardwareReset.X.production.obj
@@ -447,12 +807,12 @@ __Hbank12 0 0 ABS 0 bank12 dist/default/production\HardwareReset.X.production.ob
 __Hbank13 0 0 ABS 0 bank13 dist/default/production\HardwareReset.X.production.obj
 __Hbank14 0 0 ABS 0 bank14 dist/default/production\HardwareReset.X.production.obj
 __Hbank15 0 0 ABS 0 bank15 dist/default/production\HardwareReset.X.production.obj
-__end_of_MainTask 3A6 0 CODE 0 text10 dist/default/production\HardwareReset.X.production.obj
+__end_of_MainTask 135E 0 CODE 0 text10 dist/default/production\HardwareReset.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\HardwareReset.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production\HardwareReset.X.production.obj
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\ARIELL~1\AppData\Local\Temp\s4us.obj
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.obj
 _BAUDCON1 FB8 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-__end_of_InitHardware 2DC 0 CODE 0 text16 dist/default/production\HardwareReset.X.production.obj
+__end_of_InitHardware F78 0 CODE 0 text20 dist/default/production\HardwareReset.X.production.obj
 __Hcomram 0 0 ABS 0 comram dist/default/production\HardwareReset.X.production.obj
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production\HardwareReset.X.production.obj
 __Lbank0 0 0 ABS 0 bank0 dist/default/production\HardwareReset.X.production.obj
@@ -469,6 +829,9 @@ __Lcinit 0 0 ABS 0 cinit dist/default/production\HardwareReset.X.production.obj
 __Lconst 0 0 CONST 0 const dist/default/production\HardwareReset.X.production.obj
 __Lidata 0 0 CODE 0 idata dist/default/production\HardwareReset.X.production.obj
 __Lidloc 200000 0 IDLOC 0 idloc dist/default/production\HardwareReset.X.production.obj
+___ftadd@exp1 6E 0 BANK0 1 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
+___ftadd@exp2 6D 0 BANK0 1 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
+___ftadd@sign 6C 0 BANK0 1 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
 __Lnvbit 0 0 COMRAM 1 nvbit dist/default/production\HardwareReset.X.production.obj
 __Lparam 0 0 COMRAM 1 rparam dist/default/production\HardwareReset.X.production.obj
 __Lrdata 0 0 COMRAM 1 rdata dist/default/production\HardwareReset.X.production.obj
@@ -487,48 +850,66 @@ __Hfarbss 0 0 FARRAM 0 farbss dist/default/production\HardwareReset.X.production
 __Lintcode_body 0 0 ABS 0 intcode_body dist/default/production\HardwareReset.X.production.obj
 __CFG_T3CMX$PORTC0 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 _INTCONbits FF2 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-_INTERRUPT_Initialize 3AA 0 CODE 0 text6 dist/default/production\HardwareReset.X.production.obj
+_INTERRUPT_Initialize 1362 0 CODE 0 text6 dist/default/production\HardwareReset.X.production.obj
 __Habs1 0 0 ABS 0 abs1 dist/default/production\HardwareReset.X.production.obj
 __Hdata 0 0 ABS 0 data dist/default/production\HardwareReset.X.production.obj
 __Hinit 9E 0 CODE 0 init dist/default/production\HardwareReset.X.production.obj
 __Hrbit 0 0 COMRAM 1 rbit dist/default/production\HardwareReset.X.production.obj
 __Hrbss 0 0 COMRAM 1 rbss dist/default/production\HardwareReset.X.production.obj
-__Htemp 2D 0 COMRAM 1 temp dist/default/production\HardwareReset.X.production.obj
+__Htemp 51 0 COMRAM 1 temp dist/default/production\HardwareReset.X.production.obj
 __Htext 0 0 ABS 0 text dist/default/production\HardwareReset.X.production.obj
 __Labs1 0 0 ABS 0 abs1 dist/default/production\HardwareReset.X.production.obj
 __Ldata 0 0 ABS 0 data dist/default/production\HardwareReset.X.production.obj
 __Linit 9A 0 CODE 0 init dist/default/production\HardwareReset.X.production.obj
 __Lrbit 0 0 COMRAM 1 rbit dist/default/production\HardwareReset.X.production.obj
 __Lrbss 0 0 COMRAM 1 rbss dist/default/production\HardwareReset.X.production.obj
-__Ltemp 2C 0 COMRAM 1 temp dist/default/production\HardwareReset.X.production.obj
+__Ltemp 50 0 COMRAM 1 temp dist/default/production\HardwareReset.X.production.obj
 __Ltext 0 0 ABS 0 text dist/default/production\HardwareReset.X.production.obj
 __CFG_XINST$OFF 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-___wmul 21A 0 CODE 0 text13 dist/default/production\HardwareReset.X.production.obj
-int$flags 2C 0 COMRAM 1 temp dist/default/production\HardwareReset.X.production.obj
+__pnvBANK0 B7 0 BANK0 1 nvBANK0 dist/default/production\HardwareReset.X.production.obj
+PID_Control@newInput 7E 0 BANK0 1 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
+_PID_SetControllerDirection 134E 0 CODE 0 text34 dist/default/production\HardwareReset.X.production.obj
+___ftge F78 0 CODE 0 text31 dist/default/production\HardwareReset.X.production.obj
+___wmul 11D8 0 CODE 0 text13 dist/default/production\HardwareReset.X.production.obj
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
+__end_of_PID_SetSampleTime E2E 0 CODE 0 text24 dist/default/production\HardwareReset.X.production.obj
+int$flags 50 0 COMRAM 1 temp dist/default/production\HardwareReset.X.production.obj
 __HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
 __size_of_INTERRUPT_InterruptManager 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __Hintret 0 0 ABS 0 intret dist/default/production\HardwareReset.X.production.obj
 __Hirdata 0 0 CODE 0 irdata dist/default/production\HardwareReset.X.production.obj
 _PR2 FBB 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __S0 30000E 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-__S1 2D 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+__S1 B9 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __S2 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __size_of_TMR2_ISR 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-__pnvCOMRAM 2A 0 COMRAM 1 nvCOMRAM dist/default/production\HardwareReset.X.production.obj
+_PID_SetTunings 7FA 0 CODE 0 text22 dist/default/production\HardwareReset.X.production.obj
+___awtoft@c 1E 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
+__HidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production\HardwareReset.X.production.obj
 __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\HardwareReset.X.production.obj
 __size_of_TMR2_SetInterruptHandler 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __Hnvrram 0 0 COMRAM 1 nvrram dist/default/production\HardwareReset.X.production.obj
-_SYSTEM_Initialize 2A2 0 CODE 0 text1 dist/default/production\HardwareReset.X.production.obj
-_TMR2_DefaultInterruptHandler 3B6 0 CODE 0 text23 dist/default/production\HardwareReset.X.production.obj
+__size_of_PID_SetMode 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+_SYSTEM_Initialize 1286 0 CODE 0 text1 dist/default/production\HardwareReset.X.production.obj
+_TMR2_DefaultInterruptHandler 1370 0 CODE 0 text40 dist/default/production\HardwareReset.X.production.obj
+__end_of_PID_Control 33C 0 CODE 0 text15 dist/default/production\HardwareReset.X.production.obj
 __CFG_BORV$190 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-_TMR2_CallBack 282 0 CODE 0 text22 dist/default/production\HardwareReset.X.production.obj
+_TMR2_CallBack 11FE 0 CODE 0 text39 dist/default/production\HardwareReset.X.production.obj
+__HnvBANK0 0 0 ABS 0 nvBANK0 dist/default/production\HardwareReset.X.production.obj
 __Lintentry 0 0 ABS 0 intentry dist/default/production\HardwareReset.X.production.obj
+_PID_SetPoint 12A4 0 CODE 0 text27 dist/default/production\HardwareReset.X.production.obj
+PID_SetOutputLimits@Max 2D 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
+PID_SetOutputLimits@Min 2B 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
 __Hramtop 1000 0 RAM 0 ramtop dist/default/production\HardwareReset.X.production.obj
 __Hrparam 0 0 COMRAM 1 rparam dist/default/production\HardwareReset.X.production.obj
+_inAuto B4 0 BANK0 1 bssBANK0 dist/default/production\HardwareReset.X.production.obj
+_PIDConfig 8D 0 BANK0 1 bssBANK0 dist/default/production\HardwareReset.X.production.obj
 __CFG_PWRTEN$OFF 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __activetblptr 2 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __Hstruct 0 0 COMRAM 1 struct dist/default/production\HardwareReset.X.production.obj
+__size_of___ftge 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __size_of___wmul 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+__LbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production\HardwareReset.X.production.obj
 __Htext10 0 0 ABS 0 text10 dist/default/production\HardwareReset.X.production.obj
 __Htext11 0 0 ABS 0 text11 dist/default/production\HardwareReset.X.production.obj
 __Htext12 0 0 ABS 0 text12 dist/default/production\HardwareReset.X.production.obj
@@ -539,36 +920,77 @@ __Htext16 0 0 ABS 0 text16 dist/default/production\HardwareReset.X.production.ob
 __Htext17 0 0 ABS 0 text17 dist/default/production\HardwareReset.X.production.obj
 __Htext18 0 0 ABS 0 text18 dist/default/production\HardwareReset.X.production.obj
 __Htext19 0 0 ABS 0 text19 dist/default/production\HardwareReset.X.production.obj
+__Htext20 0 0 ABS 0 text20 dist/default/production\HardwareReset.X.production.obj
 __Htext21 0 0 ABS 0 text21 dist/default/production\HardwareReset.X.production.obj
 __Htext22 0 0 ABS 0 text22 dist/default/production\HardwareReset.X.production.obj
 __Htext23 0 0 ABS 0 text23 dist/default/production\HardwareReset.X.production.obj
 __Htext24 0 0 ABS 0 text24 dist/default/production\HardwareReset.X.production.obj
 __Htext25 0 0 ABS 0 text25 dist/default/production\HardwareReset.X.production.obj
 __Htext26 0 0 ABS 0 text26 dist/default/production\HardwareReset.X.production.obj
+__Htext27 0 0 ABS 0 text27 dist/default/production\HardwareReset.X.production.obj
+__Htext28 0 0 ABS 0 text28 dist/default/production\HardwareReset.X.production.obj
+__Htext29 0 0 ABS 0 text29 dist/default/production\HardwareReset.X.production.obj
+__Htext30 0 0 ABS 0 text30 dist/default/production\HardwareReset.X.production.obj
+__Htext31 0 0 ABS 0 text31 dist/default/production\HardwareReset.X.production.obj
+__Htext32 0 0 ABS 0 text32 dist/default/production\HardwareReset.X.production.obj
+__Htext33 0 0 ABS 0 text33 dist/default/production\HardwareReset.X.production.obj
+__Htext34 0 0 ABS 0 text34 dist/default/production\HardwareReset.X.production.obj
+__Htext35 0 0 ABS 0 text35 dist/default/production\HardwareReset.X.production.obj
+__Htext36 0 0 ABS 0 text36 dist/default/production\HardwareReset.X.production.obj
+__Htext38 0 0 ABS 0 text38 dist/default/production\HardwareReset.X.production.obj
+__Htext39 0 0 ABS 0 text39 dist/default/production\HardwareReset.X.production.obj
+__Htext40 0 0 ABS 0 text40 dist/default/production\HardwareReset.X.production.obj
+__Htext41 0 0 ABS 0 text41 dist/default/production\HardwareReset.X.production.obj
+__Htext42 0 0 ABS 0 text42 dist/default/production\HardwareReset.X.production.obj
+__Htext43 0 0 ABS 0 text43 dist/default/production\HardwareReset.X.production.obj
+?___awtoft 1E 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
 _INTERRUPT_InterruptManager 8 0 CODE 0 intcode dist/default/production\HardwareReset.X.production.obj
-_ADC_Initialize 310 0 CODE 0 text9 dist/default/production\HardwareReset.X.production.obj
+_ADC_Initialize 12BE 0 CODE 0 text9 dist/default/production\HardwareReset.X.production.obj
 _PIE1bits F9D 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 ?_ADC_GetConversion 10 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
 __CFG_HFOFST$ON 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __size_of_EUSART1_Write 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-_TMR2_ISR 262 0 CODE 0 text21 dist/default/production\HardwareReset.X.production.obj
-__ptext10 3A0 0 CODE 0 text10 dist/default/production\HardwareReset.X.production.obj
-__ptext11 2F6 0 CODE 0 text11 dist/default/production\HardwareReset.X.production.obj
-__ptext12 144 0 CODE 0 text12 dist/default/production\HardwareReset.X.production.obj
-__ptext13 21A 0 CODE 0 text13 dist/default/production\HardwareReset.X.production.obj
-__ptext14 38A 0 CODE 0 text14 dist/default/production\HardwareReset.X.production.obj
-__ptext15 1EA 0 CODE 0 text15 dist/default/production\HardwareReset.X.production.obj
-__ptext16 2C0 0 CODE 0 text16 dist/default/production\HardwareReset.X.production.obj
-__ptext17 396 0 CODE 0 text17 dist/default/production\HardwareReset.X.production.obj
-__ptext18 3AE 0 CODE 0 text18 dist/default/production\HardwareReset.X.production.obj
-__ptext19 328 0 CODE 0 text19 dist/default/production\HardwareReset.X.production.obj
-__ptext21 262 0 CODE 0 text21 dist/default/production\HardwareReset.X.production.obj
-__ptext22 282 0 CODE 0 text22 dist/default/production\HardwareReset.X.production.obj
-__ptext23 3B6 0 CODE 0 text23 dist/default/production\HardwareReset.X.production.obj
-__ptext24 9E 0 CODE 0 text24 dist/default/production\HardwareReset.X.production.obj
-__ptext25 3B2 0 CODE 0 text25 dist/default/production\HardwareReset.X.production.obj
-__ptext26 0 0 CODE 0 text26 dist/default/production\HardwareReset.X.production.obj
-__end_of_PIN_MANAGER_Initialize 1EA 0 CODE 0 text4 dist/default/production\HardwareReset.X.production.obj
+_TMR2_ISR 1266 0 CODE 0 text38 dist/default/production\HardwareReset.X.production.obj
+__ptext10 1358 0 CODE 0 text10 dist/default/production\HardwareReset.X.production.obj
+__ptext11 1246 0 CODE 0 text11 dist/default/production\HardwareReset.X.production.obj
+__ptext12 6E8 0 CODE 0 text12 dist/default/production\HardwareReset.X.production.obj
+__ptext13 11D8 0 CODE 0 text13 dist/default/production\HardwareReset.X.production.obj
+__ptext14 1008 0 CODE 0 text14 dist/default/production\HardwareReset.X.production.obj
+__ptext15 9E 0 CODE 0 text15 dist/default/production\HardwareReset.X.production.obj
+__ptext16 5A4 0 CODE 0 text16 dist/default/production\HardwareReset.X.production.obj
+__ptext17 33C 0 CODE 0 text17 dist/default/production\HardwareReset.X.production.obj
+__ptext18 1338 0 CODE 0 text18 dist/default/production\HardwareReset.X.production.obj
+__ptext19 114C 0 CODE 0 text19 dist/default/production\HardwareReset.X.production.obj
+__ptext20 EDC 0 CODE 0 text20 dist/default/production\HardwareReset.X.production.obj
+__ptext21 1344 0 CODE 0 text21 dist/default/production\HardwareReset.X.production.obj
+__ptext22 7FA 0 CODE 0 text22 dist/default/production\HardwareReset.X.production.obj
+__ptext23 117C 0 CODE 0 text23 dist/default/production\HardwareReset.X.production.obj
+__ptext24 D80 0 CODE 0 text24 dist/default/production\HardwareReset.X.production.obj
+__ptext25 9F8 0 CODE 0 text25 dist/default/production\HardwareReset.X.production.obj
+__ptext26 BDE 0 CODE 0 text26 dist/default/production\HardwareReset.X.production.obj
+__ptext27 12A4 0 CODE 0 text27 dist/default/production\HardwareReset.X.production.obj
+__ptext28 8FE 0 CODE 0 text28 dist/default/production\HardwareReset.X.production.obj
+__ptext29 11AC 0 CODE 0 text29 dist/default/production\HardwareReset.X.production.obj
+__ptext30 CC4 0 CODE 0 text30 dist/default/production\HardwareReset.X.production.obj
+__ptext31 F78 0 CODE 0 text31 dist/default/production\HardwareReset.X.production.obj
+__ptext32 1114 0 CODE 0 text32 dist/default/production\HardwareReset.X.production.obj
+__ptext33 E2E 0 CODE 0 text33 dist/default/production\HardwareReset.X.production.obj
+__ptext34 134E 0 CODE 0 text34 dist/default/production\HardwareReset.X.production.obj
+__ptext35 1366 0 CODE 0 text35 dist/default/production\HardwareReset.X.production.obj
+__ptext36 12D6 0 CODE 0 text36 dist/default/production\HardwareReset.X.production.obj
+__ptext38 1266 0 CODE 0 text38 dist/default/production\HardwareReset.X.production.obj
+__ptext39 11FE 0 CODE 0 text39 dist/default/production\HardwareReset.X.production.obj
+__ptext40 1370 0 CODE 0 text40 dist/default/production\HardwareReset.X.production.obj
+__ptext41 AEC 0 CODE 0 text41 dist/default/production\HardwareReset.X.production.obj
+__ptext42 136A 0 CODE 0 text42 dist/default/production\HardwareReset.X.production.obj
+__ptext43 0 0 CODE 0 text43 dist/default/production\HardwareReset.X.production.obj
+__end_of_PIN_MANAGER_Initialize 10D6 0 CODE 0 text4 dist/default/production\HardwareReset.X.production.obj
+___awdiv 1008 0 CODE 0 text14 dist/default/production\HardwareReset.X.production.obj
+___ftadd 33C 0 CODE 0 text17 dist/default/production\HardwareReset.X.production.obj
+___ftdiv BDE 0 CODE 0 text26 dist/default/production\HardwareReset.X.production.obj
+___ftmul 9F8 0 CODE 0 text25 dist/default/production\HardwareReset.X.production.obj
+___ftneg 117C 0 CODE 0 text23 dist/default/production\HardwareReset.X.production.obj
+___fttol 5A4 0 CODE 0 text16 dist/default/production\HardwareReset.X.production.obj
 __Lbank10 0 0 ABS 0 bank10 dist/default/production\HardwareReset.X.production.obj
 __Lbank11 0 0 ABS 0 bank11 dist/default/production\HardwareReset.X.production.obj
 __Lbank12 0 0 ABS 0 bank12 dist/default/production\HardwareReset.X.production.obj
@@ -577,57 +999,77 @@ __Lbank14 0 0 ABS 0 bank14 dist/default/production\HardwareReset.X.production.ob
 __Lbank15 0 0 ABS 0 bank15 dist/default/production\HardwareReset.X.production.obj
 __Lbigbss 0 0 BIGRAM 1 bigbss dist/default/production\HardwareReset.X.production.obj
 __Lbigram 0 0 ABS 0 bigram dist/default/production\HardwareReset.X.production.obj
+__end_of_PID_SetTunings 8FE 0 CODE 0 text22 dist/default/production\HardwareReset.X.production.obj
 __Lcomram 0 0 ABS 0 comram dist/default/production\HardwareReset.X.production.obj
 __Lconfig 300000 0 CONFIG 0 config dist/default/production\HardwareReset.X.production.obj
-TMR2_Tick@Hard_OFF 1C 0 COMRAM 1 bssCOMRAM dist/default/production\HardwareReset.X.production.obj
-__end_of_TMR2_ISR 282 0 CODE 0 text21 dist/default/production\HardwareReset.X.production.obj
+?___ftpack 10 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
+TMR2_Tick@Hard_OFF 44 0 COMRAM 1 bssCOMRAM dist/default/production\HardwareReset.X.production.obj
+__end_of_TMR2_ISR 1286 0 CODE 0 text38 dist/default/production\HardwareReset.X.production.obj
 ___wmul@multiplier 10 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
 _LATAbits F89 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 _LATDbits F8C 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+__size_of_PID_SetPoint 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 _RCSTA1bits FAB 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\HardwareReset.X.production.obj
+_PID_SetSampleTime D80 0 CODE 0 text24 dist/default/production\HardwareReset.X.production.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\HardwareReset.X.production.obj
-stackhi F37 0 ABS 0 - C:\Users\ARIELL~1\AppData\Local\Temp\s4us.obj
-stacklo 60 0 ABS 0 - C:\Users\ARIELL~1\AppData\Local\Temp\s4us.obj
-__end_of_EUSART1_Write 396 0 CODE 0 text14 dist/default/production\HardwareReset.X.production.obj
+stackhi F37 0 ABS 0 - C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.obj
+stacklo B9 0 ABS 0 - C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.obj
+__end_of_EUSART1_Write 1344 0 CODE 0 text18 dist/default/production\HardwareReset.X.production.obj
 __Lintcode 8 0 CODE 0 intcode dist/default/production\HardwareReset.X.production.obj
 __size_of_ADC_SelectChannel 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 _OSCCON2 FD2 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 _OSCTUNE F9B 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __Lintret 0 0 ABS 0 intret dist/default/production\HardwareReset.X.production.obj
+_controllerDirection A6 0 BANK0 1 bssBANK0 dist/default/production\HardwareReset.X.production.obj
 __Lirdata 0 0 CODE 0 irdata dist/default/production\HardwareReset.X.production.obj
 _ADCON0bits FC2 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __Lspace_0 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __Lspace_1 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __Lspace_2 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-__pbssCOMRAM 16 0 COMRAM 1 bssCOMRAM dist/default/production\HardwareReset.X.production.obj
-__end_of_TMR2_SetInterruptHandler 3A0 0 CODE 0 text17 dist/default/production\HardwareReset.X.production.obj
-__end_of_ADC_Initialize 328 0 CODE 0 text9 dist/default/production\HardwareReset.X.production.obj
+___ftmul@cntr 3E 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
+__pbssCOMRAM 40 0 COMRAM 1 bssCOMRAM dist/default/production\HardwareReset.X.production.obj
+___ftmul@sign 3F 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
+__end_of_TMR2_SetInterruptHandler 134E 0 CODE 0 text21 dist/default/production\HardwareReset.X.production.obj
+__size_of_PID_SetOutputLimits 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+__end_of_ADC_Initialize 12D6 0 CODE 0 text9 dist/default/production\HardwareReset.X.production.obj
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
 _PIR1bits F9E 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+__end_of_PID_SetPoint 12BE 0 CODE 0 text27 dist/default/production\HardwareReset.X.production.obj
 __CFG_LVP$ON 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-TMR2_Tick@State 1A 0 COMRAM 1 bssCOMRAM dist/default/production\HardwareReset.X.production.obj
+TMR2_Tick@State 42 0 COMRAM 1 bssCOMRAM dist/default/production\HardwareReset.X.production.obj
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
-end_of_initialization 2E8 0 CODE 0 cinit dist/default/production\HardwareReset.X.production.obj
+PID_Control@error 88 0 BANK0 1 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
+end_of_initialization 1106 0 CODE 0 cinit dist/default/production\HardwareReset.X.production.obj
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\HardwareReset.X.production.obj
 __Hintentry 0 0 ABS 0 intentry dist/default/production\HardwareReset.X.production.obj
 __CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 _RCONbits FD0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+___awdiv@quotient 1C 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
+?___awdiv 16 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
+?___ftadd 63 0 BANK0 1 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
+?___ftdiv 22 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
+?___ftmul 31 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
+?___ftneg 60 0 BANK0 1 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
+?___fttol 6F 0 BANK0 1 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
 __size_of_TMR2_CallBack 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __Hreset_vec 4 0 CODE 0 reset_vec dist/default/production\HardwareReset.X.production.obj
+?_PID_Control 7E 0 BANK0 1 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
+__HbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production\HardwareReset.X.production.obj
 __Lramtop 1000 0 RAM 0 ramtop dist/default/production\HardwareReset.X.production.obj
 __Lrparam 0 0 COMRAM 1 rparam dist/default/production\HardwareReset.X.production.obj
-_TempUpdate 2F6 0 CODE 0 text11 dist/default/production\HardwareReset.X.production.obj
-__pcinit 2DC 0 CODE 0 cinit dist/default/production\HardwareReset.X.production.obj
-__ptext0 36A 0 CODE 0 text0 dist/default/production\HardwareReset.X.production.obj
-__ptext1 2A2 0 CODE 0 text1 dist/default/production\HardwareReset.X.production.obj
-__ptext2 240 0 CODE 0 text2 dist/default/production\HardwareReset.X.production.obj
-__ptext3 3A6 0 CODE 0 text3 dist/default/production\HardwareReset.X.production.obj
-__ptext4 1A0 0 CODE 0 text4 dist/default/production\HardwareReset.X.production.obj
-__ptext5 37C 0 CODE 0 text5 dist/default/production\HardwareReset.X.production.obj
-__ptext6 3AA 0 CODE 0 text6 dist/default/production\HardwareReset.X.production.obj
-__ptext7 340 0 CODE 0 text7 dist/default/production\HardwareReset.X.production.obj
-__ptext8 356 0 CODE 0 text8 dist/default/production\HardwareReset.X.production.obj
-__ptext9 310 0 CODE 0 text9 dist/default/production\HardwareReset.X.production.obj
+_TempUpdate 1246 0 CODE 0 text11 dist/default/production\HardwareReset.X.production.obj
+__pcinit 10D6 0 CODE 0 cinit dist/default/production\HardwareReset.X.production.obj
+__ptext0 1318 0 CODE 0 text0 dist/default/production\HardwareReset.X.production.obj
+__ptext1 1286 0 CODE 0 text1 dist/default/production\HardwareReset.X.production.obj
+__ptext2 1224 0 CODE 0 text2 dist/default/production\HardwareReset.X.production.obj
+__ptext3 135E 0 CODE 0 text3 dist/default/production\HardwareReset.X.production.obj
+__ptext4 108C 0 CODE 0 text4 dist/default/production\HardwareReset.X.production.obj
+__ptext5 132A 0 CODE 0 text5 dist/default/production\HardwareReset.X.production.obj
+__ptext6 1362 0 CODE 0 text6 dist/default/production\HardwareReset.X.production.obj
+__ptext7 12EE 0 CODE 0 text7 dist/default/production\HardwareReset.X.production.obj
+__ptext8 1304 0 CODE 0 text8 dist/default/production\HardwareReset.X.production.obj
+__ptext9 12BE 0 CODE 0 text9 dist/default/production\HardwareReset.X.production.obj
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\HardwareReset.X.production.obj
 __Ltext10 0 0 ABS 0 text10 dist/default/production\HardwareReset.X.production.obj
 __Ltext11 0 0 ABS 0 text11 dist/default/production\HardwareReset.X.production.obj
@@ -639,26 +1081,49 @@ __Ltext16 0 0 ABS 0 text16 dist/default/production\HardwareReset.X.production.ob
 __Ltext17 0 0 ABS 0 text17 dist/default/production\HardwareReset.X.production.obj
 __Ltext18 0 0 ABS 0 text18 dist/default/production\HardwareReset.X.production.obj
 __Ltext19 0 0 ABS 0 text19 dist/default/production\HardwareReset.X.production.obj
+__Ltext20 0 0 ABS 0 text20 dist/default/production\HardwareReset.X.production.obj
 __Ltext21 0 0 ABS 0 text21 dist/default/production\HardwareReset.X.production.obj
 __Ltext22 0 0 ABS 0 text22 dist/default/production\HardwareReset.X.production.obj
 __Ltext23 0 0 ABS 0 text23 dist/default/production\HardwareReset.X.production.obj
 __Ltext24 0 0 ABS 0 text24 dist/default/production\HardwareReset.X.production.obj
 __Ltext25 0 0 ABS 0 text25 dist/default/production\HardwareReset.X.production.obj
 __Ltext26 0 0 ABS 0 text26 dist/default/production\HardwareReset.X.production.obj
-__end_of_TempAcquisition 1A0 0 CODE 0 text12 dist/default/production\HardwareReset.X.production.obj
-__ramtop 1000 0 RAM 0 ramtop C:\Users\ARIELL~1\AppData\Local\Temp\s4us.obj
+__Ltext27 0 0 ABS 0 text27 dist/default/production\HardwareReset.X.production.obj
+__Ltext28 0 0 ABS 0 text28 dist/default/production\HardwareReset.X.production.obj
+__Ltext29 0 0 ABS 0 text29 dist/default/production\HardwareReset.X.production.obj
+__Ltext30 0 0 ABS 0 text30 dist/default/production\HardwareReset.X.production.obj
+__Ltext31 0 0 ABS 0 text31 dist/default/production\HardwareReset.X.production.obj
+__Ltext32 0 0 ABS 0 text32 dist/default/production\HardwareReset.X.production.obj
+__Ltext33 0 0 ABS 0 text33 dist/default/production\HardwareReset.X.production.obj
+__Ltext34 0 0 ABS 0 text34 dist/default/production\HardwareReset.X.production.obj
+__Ltext35 0 0 ABS 0 text35 dist/default/production\HardwareReset.X.production.obj
+__Ltext36 0 0 ABS 0 text36 dist/default/production\HardwareReset.X.production.obj
+__Ltext38 0 0 ABS 0 text38 dist/default/production\HardwareReset.X.production.obj
+__Ltext39 0 0 ABS 0 text39 dist/default/production\HardwareReset.X.production.obj
+__Ltext40 0 0 ABS 0 text40 dist/default/production\HardwareReset.X.production.obj
+__Ltext41 0 0 ABS 0 text41 dist/default/production\HardwareReset.X.production.obj
+__Ltext42 0 0 ABS 0 text42 dist/default/production\HardwareReset.X.production.obj
+__Ltext43 0 0 ABS 0 text43 dist/default/production\HardwareReset.X.production.obj
+__end_of_TempAcquisition 7FA 0 CODE 0 text12 dist/default/production\HardwareReset.X.production.obj
+__ramtop 1000 0 RAM 0 ramtop C:\Users\ARIELL~1\AppData\Local\Temp\s5ts.obj
 __size_of_ADC_ISR 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-__end_of_CCP5_Initialize 36A 0 CODE 0 text8 dist/default/production\HardwareReset.X.production.obj
+__end_of_CCP5_Initialize 1318 0 CODE 0 text8 dist/default/production\HardwareReset.X.production.obj
 __Lpowerup 9A 0 CODE 0 powerup dist/default/production\HardwareReset.X.production.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\HardwareReset.X.production.obj
+_PID_Initialize CC4 0 CODE 0 text30 dist/default/production\HardwareReset.X.production.obj
+_PID_SetOutputLimits 8FE 0 CODE 0 text28 dist/default/production\HardwareReset.X.production.obj
+__size_of_PID_Control 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\HardwareReset.X.production.obj
+PID_SetTunings@SampleTimeInSec 6C 0 BANK0 1 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
 ADC_SelectChannel@channel 11 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
-__end_of_TMR2_CallBack 2A2 0 CODE 0 text22 dist/default/production\HardwareReset.X.production.obj
+__end_of_TMR2_CallBack 1224 0 CODE 0 text39 dist/default/production\HardwareReset.X.production.obj
 __size_of_ADC_GetConversion 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+PID_SetSampleTime@newSampleTime 60 0 BANK0 1 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
 __size_of_TMR2_DefaultInterruptHandler 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 ___param_bank 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\HardwareReset.X.production.obj
-__end_of__initialization 2E8 0 CODE 0 cinit dist/default/production\HardwareReset.X.production.obj
+___ftmul@exp 3A 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
+__end_of__initialization 1106 0 CODE 0 cinit dist/default/production\HardwareReset.X.production.obj
 __CFG_WRT0$OFF 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __CFG_WRT1$OFF 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __CFG_WRT2$OFF 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
@@ -667,24 +1132,31 @@ __CFG_WRTB$OFF 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.ob
 __Libigdata 0 0 CODE 0 ibigdata dist/default/production\HardwareReset.X.production.obj
 __CFG_WRTC$OFF 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __CFG_WRTD$OFF 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-__end_of_TMR2_DefaultInterruptHandler 3B8 0 CODE 0 text23 dist/default/production\HardwareReset.X.production.obj
+__end_of_TMR2_DefaultInterruptHandler 1372 0 CODE 0 text40 dist/default/production\HardwareReset.X.production.obj
 __Lclrtext 0 0 ABS 0 clrtext dist/default/production\HardwareReset.X.production.obj
 _SPBRGH1 FB0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-TempAcquisition@TEMPERATURA 28 0 COMRAM 1 bssCOMRAM dist/default/production\HardwareReset.X.production.obj
+_PID_SetMode 11AC 0 CODE 0 text29 dist/default/production\HardwareReset.X.production.obj
+___ftpack@sign 14 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
+TempAcquisition@TEMPERATURA B5 0 BANK0 1 bssBANK0 dist/default/production\HardwareReset.X.production.obj
 __pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
+___ftdiv@cntr 2B 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
+___ftdiv@sign 30 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
 __CFG_BOREN$SBORDIS 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-__end_of_TempUpdate 310 0 CODE 0 text11 dist/default/production\HardwareReset.X.production.obj
-_TempAcquisition 144 0 CODE 0 text12 dist/default/production\HardwareReset.X.production.obj
-__end_of_main 37C 0 CODE 0 text0 dist/default/production\HardwareReset.X.production.obj
+__end_of_TempUpdate 1266 0 CODE 0 text11 dist/default/production\HardwareReset.X.production.obj
+_TempAcquisition 6E8 0 CODE 0 text12 dist/default/production\HardwareReset.X.production.obj
+__end_of_main 132A 0 CODE 0 text0 dist/default/production\HardwareReset.X.production.obj
 __pintcode 8 0 CODE 0 intcode dist/default/production\HardwareReset.X.production.obj
-_CCP5_Initialize 356 0 CODE 0 text8 dist/default/production\HardwareReset.X.production.obj
-__end_of_ADC_SelectChannel 340 0 CODE 0 text19 dist/default/production\HardwareReset.X.production.obj
+_CCP5_Initialize 1304 0 CODE 0 text8 dist/default/production\HardwareReset.X.production.obj
+__end_of_ADC_SelectChannel 12EE 0 CODE 0 text36 dist/default/production\HardwareReset.X.production.obj
+_ITerm A0 0 BANK0 1 bssBANK0 dist/default/production\HardwareReset.X.production.obj
+_Input AA 0 BANK0 1 bssBANK0 dist/default/production\HardwareReset.X.production.obj
 _T2CON FBA 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 _TRISA F92 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 _TRISB F93 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 _TRISC F94 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 _TRISD F95 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 _TRISE F96 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
+__end_of_PID_Initialize D80 0 CODE 0 text30 dist/default/production\HardwareReset.X.production.obj
 __CFG_CP0$OFF 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __CFG_CP1$OFF 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __HRAM 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
@@ -697,30 +1169,34 @@ __Lram 0 0 ABS 0 ram dist/default/production\HardwareReset.X.production.obj
 __Lsfr 0 0 ABS 0 sfr dist/default/production\HardwareReset.X.production.obj
 __CFG_CP2$OFF 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __CFG_CP3$OFF 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-_TMR2_InterruptHandler 2A 0 COMRAM 1 nvCOMRAM dist/default/production\HardwareReset.X.production.obj
+_TMR2_InterruptHandler B7 0 BANK0 1 nvBANK0 dist/default/production\HardwareReset.X.production.obj
 __CFG_PLLCFG$OFF 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __CFG_CPB$OFF 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 _CCP5CON F54 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-__end_of_EUSART1_Initialize 356 0 CODE 0 text7 dist/default/production\HardwareReset.X.production.obj
-__end_of_OSCILLATOR_Initialize 38A 0 CODE 0 text5 dist/default/production\HardwareReset.X.production.obj
-TMR2_Tick@min 20 0 COMRAM 1 bssCOMRAM dist/default/production\HardwareReset.X.production.obj
-TMR2_Tick@seg 22 0 COMRAM 1 bssCOMRAM dist/default/production\HardwareReset.X.production.obj
-__initialization 2DC 0 CODE 0 cinit dist/default/production\HardwareReset.X.production.obj
+___fttol@sign1 78 0 BANK0 1 cstackBANK0 dist/default/production\HardwareReset.X.production.obj
+__end_of_EUSART1_Initialize 1304 0 CODE 0 text7 dist/default/production\HardwareReset.X.production.obj
+__end_of_OSCILLATOR_Initialize 1338 0 CODE 0 text5 dist/default/production\HardwareReset.X.production.obj
+TMR2_Tick@min 48 0 COMRAM 1 bssCOMRAM dist/default/production\HardwareReset.X.production.obj
+TMR2_Tick@seg 4A 0 COMRAM 1 bssCOMRAM dist/default/production\HardwareReset.X.production.obj
+__initialization 10D6 0 CODE 0 cinit dist/default/production\HardwareReset.X.production.obj
+__pbssBANK0 8D 0 BANK0 1 bssBANK0 dist/default/production\HardwareReset.X.production.obj
+__pdataCOMRAM 4E 0 COMRAM 1 dataCOMRAM dist/default/production\HardwareReset.X.production.obj
 _T2CONbits FBA 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __Hfardata 0 0 FARRAM 0 fardata dist/default/production\HardwareReset.X.production.obj
 ___wmul@product 14 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
 __Hsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\HardwareReset.X.production.obj
-__end_of_ADC_ISR 3B6 0 CODE 0 text25 dist/default/production\HardwareReset.X.production.obj
+__end_of_ADC_ISR 136E 0 CODE 0 text42 dist/default/production\HardwareReset.X.production.obj
 __Lifardata 0 0 CODE 0 ifardata dist/default/production\HardwareReset.X.production.obj
 __Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\HardwareReset.X.production.obj
 __CFG_MCLRE$EXTMCLR 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
 __Hintcode 9A 0 CODE 0 intcode dist/default/production\HardwareReset.X.production.obj
 __size_of_INTERRUPT_Initialize 0 0 ABS 0 - dist/default/production\HardwareReset.X.production.obj
-_OSCILLATOR_Initialize 37C 0 CODE 0 text5 dist/default/production\HardwareReset.X.production.obj
-__end_of_TMR2_Initialize 262 0 CODE 0 text2 dist/default/production\HardwareReset.X.production.obj
-__end_of_TMR2_StartTimer 3AA 0 CODE 0 text3 dist/default/production\HardwareReset.X.production.obj
+___ftmul@f3_as_product 3B 0 COMRAM 1 cstackCOMRAM dist/default/production\HardwareReset.X.production.obj
+_OSCILLATOR_Initialize 132A 0 CODE 0 text5 dist/default/production\HardwareReset.X.production.obj
+__end_of_TMR2_Initialize 1246 0 CODE 0 text2 dist/default/production\HardwareReset.X.production.obj
+__end_of_TMR2_StartTimer 1362 0 CODE 0 text3 dist/default/production\HardwareReset.X.production.obj
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -746,7 +1222,8 @@ __end_of_TMR2_StartTimer 3AA 0 CODE 0 text3 dist/default/production\HardwareRese
 # All other numeric quantities are in decimal.
 %SEGMENTS
 idloc 0 200000 200000 8 1
-cstackCOMRAM 1 1 1 2C 1
+cstackCOMRAM 1 1 1 50 1
+cstackBANK0 1 60 60 59 1
 reset_vec 0 0 0 4 1
-intcode 0 8 8 3B0 1
+intcode 0 8 8 136A 1
 config 0 300000 300000 E 1
