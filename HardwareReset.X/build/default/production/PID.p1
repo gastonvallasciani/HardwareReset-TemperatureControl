@@ -1,0 +1,375 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"12 PID.h
+[s S1 `Vi 1 `Vi 1 `Vd 1 `Vd 1 `Vd 1 `Vd 1 ]
+[n S1 . Min Max Kp Ki Kd SetPoint ]
+"30
+[v _PID_Initialize `(v ~T0 @X0 0 ef ]
+[; ;PID.h: 12: typedef struct {
+[; ;PID.h: 13: volatile int Min;
+[; ;PID.h: 14: volatile int Max;
+[; ;PID.h: 16: volatile double Kp;
+[; ;PID.h: 17: volatile double Ki;
+[; ;PID.h: 18: volatile double Kd;
+[; ;PID.h: 20: volatile double SetPoint;
+[; ;PID.h: 21: } tPID;
+[; ;PID.h: 23: int PID_Control(int);
+[; ;PID.h: 24: void PID_SetPoint(int);
+[; ;PID.h: 25: void PID_SetTunings(double, double, double);
+[; ;PID.h: 26: void PID_SetSampleTime(int);
+[; ;PID.h: 27: void PID_SetOutputLimits(int, int);
+[; ;PID.h: 28: void PID_SetControllerDirection(int);
+[; ;PID.h: 29: void PID_SetMode(int);
+[; ;PID.h: 30: void PID_Initialize(void);
+[; ;PID.h: 32: extern tPID PIDConfig;
+"12 PID.c
+[v _PIDConfig `S1 ~T0 @X0 1 e ]
+[; ;PID.c: 12: tPID PIDConfig;
+"16
+[v _Input `i ~T0 @X0 1 e ]
+[v _Output `i ~T0 @X0 1 e ]
+[; ;PID.c: 16: int Input, Output;
+"17
+[v _ITerm `d ~T0 @X0 1 e ]
+[v _lastInput `d ~T0 @X0 1 e ]
+[; ;PID.c: 17: double ITerm, lastInput;
+"18
+[v _SampleTime `i ~T0 @X0 1 e ]
+[i _SampleTime
+-> 1000 `i
+]
+[; ;PID.c: 18: int SampleTime = 1000;
+"19
+[v _controllerDirection `i ~T0 @X0 1 e ]
+[i _controllerDirection
+-> 0 `i
+]
+[; ;PID.c: 19: int controllerDirection = 0;
+"20
+[v _inAuto `uc ~T0 @X0 1 e ]
+[i _inAuto
+-> -> 0 `i `uc
+]
+[; ;PID.c: 20: unsigned char inAuto = 0;
+"22
+[v _PID_Control `(i ~T0 @X0 1 ef1`i ]
+"23
+{
+[; ;PID.c: 22: int PID_Control(int newInput)
+[; ;PID.c: 23: {
+[e :U _PID_Control ]
+"22
+[v _newInput `i ~T0 @X0 1 r1 ]
+"23
+[f ]
+"24
+[v _error `d ~T0 @X0 1 a ]
+[v _dInput `d ~T0 @X0 1 a ]
+[; ;PID.c: 24: double error, dInput;
+[; ;PID.c: 26: Input = newInput;
+"26
+[e = _Input _newInput ]
+[; ;PID.c: 27: if(!inAuto) return PIDConfig.Min;
+"27
+[e $ ! ! != -> _inAuto `i -> -> -> 0 `i `uc `i 3  ]
+[e ) . _PIDConfig 0 ]
+[e $UE 2  ]
+[e :U 3 ]
+[; ;PID.c: 31: {
+"31
+{
+[; ;PID.c: 33: error = PIDConfig.SetPoint - Input;
+"33
+[e = _error - . _PIDConfig 5 -> _Input `d ]
+[; ;PID.c: 34: ITerm += (PIDConfig.Ki * error);
+"34
+[e =+ _ITerm * . _PIDConfig 3 _error ]
+[; ;PID.c: 35: if (ITerm > PIDConfig.Max) ITerm = PIDConfig.Max;
+"35
+[e $ ! > _ITerm -> . _PIDConfig 1 `d 4  ]
+[e = _ITerm -> . _PIDConfig 1 `d ]
+[e $U 5  ]
+"36
+[e :U 4 ]
+[; ;PID.c: 36: else if (ITerm < PIDConfig.Min) ITerm = PIDConfig.Min;
+[e $ ! < _ITerm -> . _PIDConfig 0 `d 6  ]
+[e = _ITerm -> . _PIDConfig 0 `d ]
+[e :U 6 ]
+"37
+[e :U 5 ]
+[; ;PID.c: 37: dInput = (Input - lastInput);
+[e = _dInput - -> _Input `d _lastInput ]
+[; ;PID.c: 40: Output = (int)(PIDConfig.Kp * error + ITerm - PIDConfig.Kd * dInput);
+"40
+[e = _Output -> - + * . _PIDConfig 2 _error _ITerm * . _PIDConfig 4 _dInput `i ]
+[; ;PID.c: 41: if (Output > PIDConfig.Max) Output = PIDConfig.Max;
+"41
+[e $ ! > _Output . _PIDConfig 1 7  ]
+[e = _Output . _PIDConfig 1 ]
+[e $U 8  ]
+"42
+[e :U 7 ]
+[; ;PID.c: 42: else if(Output < PIDConfig.Min) Output = PIDConfig.Min;
+[e $ ! < _Output . _PIDConfig 0 9  ]
+[e = _Output . _PIDConfig 0 ]
+[e :U 9 ]
+"45
+[e :U 8 ]
+[; ;PID.c: 45: lastInput = Input;
+[e = _lastInput -> _Input `d ]
+"47
+}
+[; ;PID.c: 47: }
+[; ;PID.c: 48: return (PIDConfig.Max - Output);
+"48
+[e ) - . _PIDConfig 1 _Output ]
+[e $UE 2  ]
+[; ;PID.c: 49: }
+"49
+[e :UE 2 ]
+}
+"51
+[v _PID_SetPoint `(v ~T0 @X0 1 ef1`i ]
+"52
+{
+[; ;PID.c: 51: void PID_SetPoint(int newSetPoint)
+[; ;PID.c: 52: {
+[e :U _PID_SetPoint ]
+"51
+[v _newSetPoint `i ~T0 @X0 1 r1 ]
+"52
+[f ]
+[; ;PID.c: 53: PIDConfig.SetPoint = newSetPoint;
+"53
+[e = . _PIDConfig 5 -> _newSetPoint `d ]
+[; ;PID.c: 54: }
+"54
+[e :UE 10 ]
+}
+"55
+[v _PID_SetTunings `(v ~T0 @X0 1 ef3`d`d`d ]
+"56
+{
+[; ;PID.c: 55: void PID_SetTunings(double Kp, double Ki, double Kd)
+[; ;PID.c: 56: {
+[e :U _PID_SetTunings ]
+"55
+[v _Kp `d ~T0 @X0 1 r1 ]
+[v _Ki `d ~T0 @X0 1 r2 ]
+[v _Kd `d ~T0 @X0 1 r3 ]
+"56
+[f ]
+"57
+[v _SampleTimeInSec `d ~T0 @X0 1 a ]
+[; ;PID.c: 57: double SampleTimeInSec;
+[; ;PID.c: 59: if ((Kp < 0) || (Ki < 0) || (Kd < 0)) return;
+"59
+[e $ ! || || < _Kp -> -> 0 `i `d < _Ki -> -> 0 `i `d < _Kd -> -> 0 `i `d 12  ]
+[e $UE 11  ]
+[e :U 12 ]
+[; ;PID.c: 61: SampleTimeInSec = ((double)SampleTime)/1000;
+"61
+[e = _SampleTimeInSec / -> _SampleTime `d -> -> 1000 `i `d ]
+[; ;PID.c: 62: PIDConfig.Kp = Kp;
+"62
+[e = . _PIDConfig 2 _Kp ]
+[; ;PID.c: 63: PIDConfig.Ki = Ki * SampleTimeInSec;
+"63
+[e = . _PIDConfig 3 * _Ki _SampleTimeInSec ]
+[; ;PID.c: 64: PIDConfig.Kd = Kd / SampleTimeInSec;
+"64
+[e = . _PIDConfig 4 / _Kd _SampleTimeInSec ]
+[; ;PID.c: 66: if(controllerDirection == 1)
+"66
+[e $ ! == _controllerDirection -> 1 `i 13  ]
+[; ;PID.c: 67: {
+"67
+{
+[; ;PID.c: 68: PIDConfig.Kp = (0 - PIDConfig.Kp);
+"68
+[e = . _PIDConfig 2 - -> -> 0 `i `d . _PIDConfig 2 ]
+[; ;PID.c: 69: PIDConfig.Ki = (0 - PIDConfig.Ki);
+"69
+[e = . _PIDConfig 3 - -> -> 0 `i `d . _PIDConfig 3 ]
+[; ;PID.c: 70: PIDConfig.Kd = (0 - PIDConfig.Kd);
+"70
+[e = . _PIDConfig 4 - -> -> 0 `i `d . _PIDConfig 4 ]
+"71
+}
+[e :U 13 ]
+[; ;PID.c: 71: }
+[; ;PID.c: 72: }
+"72
+[e :UE 11 ]
+}
+"73
+[v _PID_SetSampleTime `(v ~T0 @X0 1 ef1`i ]
+"74
+{
+[; ;PID.c: 73: void PID_SetSampleTime(int newSampleTime)
+[; ;PID.c: 74: {
+[e :U _PID_SetSampleTime ]
+"73
+[v _newSampleTime `i ~T0 @X0 1 r1 ]
+"74
+[f ]
+[; ;PID.c: 75: if (newSampleTime > 0)
+"75
+[e $ ! > _newSampleTime -> 0 `i 15  ]
+[; ;PID.c: 76: {
+"76
+{
+"77
+[v _ratio `d ~T0 @X0 1 a ]
+[; ;PID.c: 77: double ratio = (double)newSampleTime / (double)SampleTime;
+[e = _ratio / -> _newSampleTime `d -> _SampleTime `d ]
+[; ;PID.c: 78: PIDConfig.Ki *= ratio;
+"78
+[e =* . _PIDConfig 3 _ratio ]
+[; ;PID.c: 79: PIDConfig.Kd /= ratio;
+"79
+[e =/ . _PIDConfig 4 _ratio ]
+[; ;PID.c: 80: SampleTime = (unsigned long)newSampleTime;
+"80
+[e = _SampleTime -> -> _newSampleTime `ul `i ]
+"81
+}
+[e :U 15 ]
+[; ;PID.c: 81: }
+[; ;PID.c: 82: }
+"82
+[e :UE 14 ]
+}
+"83
+[v _PID_SetOutputLimits `(v ~T0 @X0 1 ef2`i`i ]
+"84
+{
+[; ;PID.c: 83: void PID_SetOutputLimits(int Min, int Max)
+[; ;PID.c: 84: {
+[e :U _PID_SetOutputLimits ]
+"83
+[v _Min `i ~T0 @X0 1 r1 ]
+[v _Max `i ~T0 @X0 1 r2 ]
+"84
+[f ]
+[; ;PID.c: 85: if(Min > Max) return;
+"85
+[e $ ! > _Min _Max 17  ]
+[e $UE 16  ]
+[e :U 17 ]
+[; ;PID.c: 86: PIDConfig.Min = Min;
+"86
+[e = . _PIDConfig 0 _Min ]
+[; ;PID.c: 87: PIDConfig.Max = Max;
+"87
+[e = . _PIDConfig 1 _Max ]
+[; ;PID.c: 89: if (Output > PIDConfig.Max) Output = PIDConfig.Max;
+"89
+[e $ ! > _Output . _PIDConfig 1 18  ]
+[e = _Output . _PIDConfig 1 ]
+[e $U 19  ]
+"90
+[e :U 18 ]
+[; ;PID.c: 90: else if (Output < PIDConfig.Min) Output = PIDConfig.Min;
+[e $ ! < _Output . _PIDConfig 0 20  ]
+[e = _Output . _PIDConfig 0 ]
+[e :U 20 ]
+"92
+[e :U 19 ]
+[; ;PID.c: 92: if (ITerm > PIDConfig.Max) ITerm= PIDConfig.Max;
+[e $ ! > _ITerm -> . _PIDConfig 1 `d 21  ]
+[e = _ITerm -> . _PIDConfig 1 `d ]
+[e $U 22  ]
+"93
+[e :U 21 ]
+[; ;PID.c: 93: else if (ITerm < PIDConfig.Min) ITerm= PIDConfig.Min;
+[e $ ! < _ITerm -> . _PIDConfig 0 `d 23  ]
+[e = _ITerm -> . _PIDConfig 0 `d ]
+[e :U 23 ]
+"94
+[e :U 22 ]
+[; ;PID.c: 94: }
+[e :UE 16 ]
+}
+"95
+[v _PID_SetControllerDirection `(v ~T0 @X0 1 ef1`i ]
+"96
+{
+[; ;PID.c: 95: void PID_SetControllerDirection(int Direction)
+[; ;PID.c: 96: {
+[e :U _PID_SetControllerDirection ]
+"95
+[v _Direction `i ~T0 @X0 1 r1 ]
+"96
+[f ]
+[; ;PID.c: 97: controllerDirection = Direction;
+"97
+[e = _controllerDirection _Direction ]
+[; ;PID.c: 98: }
+"98
+[e :UE 24 ]
+}
+"99
+[v _PID_SetMode `(v ~T0 @X0 1 ef1`i ]
+"100
+{
+[; ;PID.c: 99: void PID_SetMode(int Mode)
+[; ;PID.c: 100: {
+[e :U _PID_SetMode ]
+"99
+[v _Mode `i ~T0 @X0 1 r1 ]
+"100
+[f ]
+"101
+[v _newAuto `uc ~T0 @X0 1 a ]
+[; ;PID.c: 101: unsigned char newAuto = (Mode == 1);
+[e = _newAuto -> -> == _Mode -> 1 `i `i `uc ]
+[; ;PID.c: 102: if (newAuto == !inAuto)
+"102
+[e $ ! == -> _newAuto `i -> ! != -> _inAuto `i -> -> -> 0 `i `uc `i `i 26  ]
+[; ;PID.c: 103: {
+"103
+{
+[; ;PID.c: 105: PID_Initialize();
+"105
+[e ( _PID_Initialize ..  ]
+"106
+}
+[e :U 26 ]
+[; ;PID.c: 106: }
+[; ;PID.c: 107: inAuto = newAuto;
+"107
+[e = _inAuto _newAuto ]
+[; ;PID.c: 108: }
+"108
+[e :UE 25 ]
+}
+"109
+[v _PID_Initialize `(v ~T0 @X0 1 ef ]
+"110
+{
+[; ;PID.c: 109: void PID_Initialize()
+[; ;PID.c: 110: {
+[e :U _PID_Initialize ]
+[f ]
+[; ;PID.c: 111: lastInput = Input;
+"111
+[e = _lastInput -> _Input `d ]
+[; ;PID.c: 112: ITerm = Output;
+"112
+[e = _ITerm -> _Output `d ]
+[; ;PID.c: 113: if (ITerm > PIDConfig.Max) ITerm = PIDConfig.Max;
+"113
+[e $ ! > _ITerm -> . _PIDConfig 1 `d 28  ]
+[e = _ITerm -> . _PIDConfig 1 `d ]
+[e $U 29  ]
+"114
+[e :U 28 ]
+[; ;PID.c: 114: else if (ITerm < PIDConfig.Min) ITerm = PIDConfig.Min;
+[e $ ! < _ITerm -> . _PIDConfig 0 `d 30  ]
+[e = _ITerm -> . _PIDConfig 0 `d ]
+[e :U 30 ]
+"115
+[e :U 29 ]
+[; ;PID.c: 115: }
+[e :UE 27 ]
+}
