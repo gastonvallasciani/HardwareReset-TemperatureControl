@@ -57,16 +57,16 @@ channel_FVRBuf2 31
 [v _ADC_SelectChannel ADC_SelectChannel `(v  1 e 1 0 ]
 "89
 [v _ADC_StartConversion ADC_StartConversion `(v  1 e 1 0 ]
-"108
-[v _ADC_GetConversion ADC_GetConversion `(ui  1 e 2 0 ]
+"96
+[v _ADC_IsConversionDone ADC_IsConversionDone `(uc  1 e 1 0 ]
+"102
+[v _ADC_GetConversionResult ADC_GetConversionResult `(ui  1 e 2 0 ]
 "129
 [v _ADC_ISR ADC_ISR `(v  1 e 1 0 ]
 "57 C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/ccp5.c
 [v _CCP5_Initialize CCP5_Initialize `(v  1 e 1 0 ]
 "55 C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/eusart1.c
 [v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
-"97
-[v _EUSART1_Write EUSART1_Write `(v  1 e 1 0 ]
 "51 C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
 "57
@@ -111,9 +111,9 @@ channel_FVRBuf2 31
 [v _MainTask MainTask `T(v  1 e 1 0 ]
 "47
 [v _TMR2_Tick TMR2_Tick `(v  1 e 1 0 ]
-"109
+"110
 [v _TempUpdate TempUpdate `T(v  1 e 1 0 ]
-"117
+"118
 [v _TempAcquisition TempAcquisition `T(v  1 e 1 0 ]
 "49 C:\Program Files\Microchip\xc8\v1.41\include\pic18f46k22.h
 [v _ANSELA ANSELA `VEuc  1 e 1 @3896 ]
@@ -498,21 +498,17 @@ channel_FVRBuf2 31
 {
 "45
 } 0
-"109
+"110
 [v _TempUpdate TempUpdate `T(v  1 e 1 0 ]
 {
-"116
-} 0
 "117
+} 0
+"118
 [v _TempAcquisition TempAcquisition `T(v  1 e 1 0 ]
 {
-"119
-[v TempAcquisition@TEMPERATURA TEMPERATURA `ui  1 s 2 TEMPERATURA ]
 "120
-[v TempAcquisition@TEMPH TEMPH `ui  1 s 2 TEMPH ]
-"121
-[v TempAcquisition@TEMPL TEMPL `ui  1 s 2 TEMPL ]
-"137
+[v TempAcquisition@TEMPERATURA TEMPERATURA `ui  1 s 2 TEMPERATURA ]
+"150
 } 0
 "15 C:\Program Files\Microchip\xc8\v1.41\sources\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
@@ -571,22 +567,15 @@ channel_FVRBuf2 31
 [v ___ftadd@f2 f2 `f  1 p 3 6 ]
 "148
 } 0
-"97 C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/eusart1.c
-[v _EUSART1_Write EUSART1_Write `(v  1 e 1 0 ]
+"96 C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
+[v _ADC_IsConversionDone ADC_IsConversionDone `(uc  1 e 1 0 ]
 {
-[v EUSART1_Write@txData txData `uc  1 a 1 wreg ]
-[v EUSART1_Write@txData txData `uc  1 a 1 wreg ]
-[v EUSART1_Write@txData txData `uc  1 a 1 15 ]
-"104
+"100
 } 0
-"108 C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
-[v _ADC_GetConversion ADC_GetConversion `(ui  1 e 2 0 ]
+"102
+[v _ADC_GetConversionResult ADC_GetConversionResult `(ui  1 e 2 0 ]
 {
-[v ADC_GetConversion@channel channel `E6986  1 a 1 wreg ]
-[v ADC_GetConversion@channel channel `E6986  1 a 1 wreg ]
-"111
-[v ADC_GetConversion@channel channel `E6986  1 a 1 19 ]
-"126
+"106
 } 0
 "22 C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
 [v _InitHardware InitHardware `T(v  1 e 1 0 ]
@@ -749,19 +738,19 @@ channel_FVRBuf2 31
 "47 C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\tasks.c
 [v _TMR2_Tick TMR2_Tick `(v  1 e 1 0 ]
 {
-"50
-[v TMR2_Tick@seg seg `VEui  1 s 2 seg ]
 "51
-[v TMR2_Tick@min min `VEui  1 s 2 min ]
+[v TMR2_Tick@seg seg `VEui  1 s 2 seg ]
 "52
-[v TMR2_Tick@Hard_ON Hard_ON `VEui  1 s 2 Hard_ON ]
+[v TMR2_Tick@min min `VEui  1 s 2 min ]
 "53
-[v TMR2_Tick@Hard_OFF Hard_OFF `VEui  1 s 2 Hard_OFF ]
+[v TMR2_Tick@Hard_ON Hard_ON `VEui  1 s 2 Hard_ON ]
 "54
+[v TMR2_Tick@Hard_OFF Hard_OFF `VEui  1 s 2 Hard_OFF ]
+"55
 [v TMR2_Tick@State State `VEui  1 s 2 State ]
-"93
+"94
 [v TMR2_Tick@PeltierCounter PeltierCounter `ui  1 s 2 PeltierCounter ]
-"107
+"108
 } 0
 "129 C:\Users\Ariel L\Desktop\Online System\HardwareReset\HardwareReset-TemperatureControl\HardwareReset.X\mcc_generated_files/adc.c
 [v _ADC_ISR ADC_ISR `(v  1 e 1 0 ]

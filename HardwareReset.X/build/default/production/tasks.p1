@@ -50,12 +50,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v F7084 `(v ~T0 @X0 1 tf ]
 "15 tasks.c
 [v _TempAcquisition `TF7084 ~T0 @X0 0 e ]
-"287 mcc_generated_files/adc.h
-[v _ADC_GetConversion `(ui ~T0 @X0 0 ef1`E7026 ]
+"224 mcc_generated_files/adc.h
+[v _ADC_IsConversionDone `(uc ~T0 @X0 0 ef ]
+"257
+[v _ADC_GetConversionResult `(ui ~T0 @X0 0 ef ]
 "23 PID.h
 [v _PID_Control `(i ~T0 @X0 0 ef1`i ]
-"134 mcc_generated_files/eusart1.h
-[v _EUSART1_Write `(v ~T0 @X0 0 ef1`uc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -6802,319 +6802,308 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tasks.c: 49: TempCounter++;
 "49
 [e ++ _TempCounter -> -> 1 `i `ui ]
-"50
+"51
 [v F7096 `Vui ~T0 @X0 1 s seg ]
 [i F7096
 -> -> 0 `i `ui
 ]
-"51
+"52
 [v F7097 `Vui ~T0 @X0 1 s min ]
 [i F7097
 -> -> 0 `i `ui
 ]
-"52
+"53
 [v F7098 `Vui ~T0 @X0 1 s Hard_ON ]
 [i F7098
 -> -> 0 `i `ui
 ]
-"53
+"54
 [v F7099 `Vui ~T0 @X0 1 s Hard_OFF ]
 [i F7099
 -> -> 0 `i `ui
 ]
-"54
+"55
 [v F7100 `Vui ~T0 @X0 1 s State ]
 [i F7100
 -> -> 0 `i `ui
 ]
-[; ;tasks.c: 50: static volatile unsigned uint16_t seg = 0;
-[; ;tasks.c: 51: static volatile unsigned uint16_t min = 0;
-[; ;tasks.c: 52: static volatile unsigned uint16_t Hard_ON = 0;
-[; ;tasks.c: 53: static volatile unsigned uint16_t Hard_OFF = 0;
-[; ;tasks.c: 54: static volatile unsigned uint16_t State = 0;
-[; ;tasks.c: 56: if (++seg >= 1000)
-"56
-[e $ ! >= =+ F7096 -> -> 1 `i `ui -> -> 1000 `i `ui 860  ]
-[; ;tasks.c: 57: {
+[; ;tasks.c: 51: static volatile unsigned uint16_t seg = 0;
+[; ;tasks.c: 52: static volatile unsigned uint16_t min = 0;
+[; ;tasks.c: 53: static volatile unsigned uint16_t Hard_ON = 0;
+[; ;tasks.c: 54: static volatile unsigned uint16_t Hard_OFF = 0;
+[; ;tasks.c: 55: static volatile unsigned uint16_t State = 0;
+[; ;tasks.c: 57: if (++seg >= 1000)
 "57
-{
-[; ;tasks.c: 58: do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
+[e $ ! >= =+ F7096 -> -> 1 `i `ui -> -> 1000 `i `ui 860  ]
+[; ;tasks.c: 58: {
 "58
+{
+[; ;tasks.c: 59: do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
+"59
 [e :U 863 ]
 {
 [e = . . _LATAbits 0 0 -> ~ -> . . _LATAbits 0 0 `i `uc ]
 }
 [e :U 862 ]
-[; ;tasks.c: 59: if ((++Hard_OFF >= 10))
-"59
-[e $ ! >= =+ F7099 -> -> 1 `i `ui -> -> 10 `i `ui 864  ]
-[; ;tasks.c: 60: {
+[; ;tasks.c: 60: if ((++Hard_OFF >= 10))
 "60
-{
-[; ;tasks.c: 61: if (State == 0)
+[e $ ! >= =+ F7099 -> -> 1 `i `ui -> -> 10 `i `ui 864  ]
+[; ;tasks.c: 61: {
 "61
-[e $ ! == F7100 -> -> 0 `i `ui 865  ]
-[; ;tasks.c: 62: {
-"62
 {
-[; ;tasks.c: 63: do { LATDbits.LATD6 = 0; } while(0);
+[; ;tasks.c: 62: if (State == 0)
+"62
+[e $ ! == F7100 -> -> 0 `i `ui 865  ]
+[; ;tasks.c: 63: {
 "63
+{
+[; ;tasks.c: 64: do { LATDbits.LATD6 = 0; } while(0);
+"64
 [e :U 868 ]
 {
 [e = . . _LATDbits 0 6 -> -> 0 `i `uc ]
 }
 [e :U 867 ]
-[; ;tasks.c: 64: do { LATDbits.LATD7 = 0; } while(0);
-"64
+[; ;tasks.c: 65: do { LATDbits.LATD7 = 0; } while(0);
+"65
 [e :U 871 ]
 {
 [e = . . _LATDbits 0 7 -> -> 0 `i `uc ]
 }
 [e :U 870 ]
-[; ;tasks.c: 65: State = 1;
-"65
-[e = F7100 -> -> 1 `i `ui ]
+[; ;tasks.c: 66: State = 1;
 "66
+[e = F7100 -> -> 1 `i `ui ]
+"67
 }
 [e :U 865 ]
-[; ;tasks.c: 66: }
-[; ;tasks.c: 67: Hard_OFF = 0;
-"67
+[; ;tasks.c: 67: }
+[; ;tasks.c: 68: Hard_OFF = 0;
+"68
 [e = F7099 -> -> 0 `i `ui ]
-"69
+"70
 }
 [e :U 864 ]
-[; ;tasks.c: 69: }
-[; ;tasks.c: 70: if (++min >= 60)
-"70
-[e $ ! >= =+ F7097 -> -> 1 `i `ui -> -> 60 `i `ui 872  ]
-[; ;tasks.c: 71: {
+[; ;tasks.c: 70: }
+[; ;tasks.c: 71: if (++min >= 60)
 "71
-{
-[; ;tasks.c: 72: if ((++Hard_ON >= 60))
+[e $ ! >= =+ F7097 -> -> 1 `i `ui -> -> 60 `i `ui 872  ]
+[; ;tasks.c: 72: {
 "72
-[e $ ! >= =+ F7098 -> -> 1 `i `ui -> -> 60 `i `ui 873  ]
-[; ;tasks.c: 73: {
+{
+[; ;tasks.c: 73: if ((++Hard_ON >= 60))
 "73
-{
-[; ;tasks.c: 74: Hard_ON=0;
+[e $ ! >= =+ F7098 -> -> 1 `i `ui -> -> 60 `i `ui 873  ]
+[; ;tasks.c: 74: {
 "74
-[e = F7098 -> -> 0 `i `ui ]
-[; ;tasks.c: 75: if(State == 1)
-"75
-[e $ ! == F7100 -> -> 1 `i `ui 874  ]
-[; ;tasks.c: 76: {
-"76
 {
-[; ;tasks.c: 77: State = 0;
+[; ;tasks.c: 75: Hard_ON=0;
+"75
+[e = F7098 -> -> 0 `i `ui ]
+[; ;tasks.c: 76: if(State == 1)
+"76
+[e $ ! == F7100 -> -> 1 `i `ui 874  ]
+[; ;tasks.c: 77: {
 "77
-[e = F7100 -> -> 0 `i `ui ]
-[; ;tasks.c: 78: do { LATDbits.LATD6 = 1; } while(0);
+{
+[; ;tasks.c: 78: State = 0;
 "78
+[e = F7100 -> -> 0 `i `ui ]
+[; ;tasks.c: 79: do { LATDbits.LATD6 = 1; } while(0);
+"79
 [e :U 877 ]
 {
 [e = . . _LATDbits 0 6 -> -> 1 `i `uc ]
 }
 [e :U 876 ]
-[; ;tasks.c: 79: do { LATDbits.LATD7 = 1; } while(0);
-"79
+[; ;tasks.c: 80: do { LATDbits.LATD7 = 1; } while(0);
+"80
 [e :U 880 ]
 {
 [e = . . _LATDbits 0 7 -> -> 1 `i `uc ]
 }
 [e :U 879 ]
-"80
-}
-[e :U 874 ]
 "81
 }
-[e :U 873 ]
-[; ;tasks.c: 80: }
-[; ;tasks.c: 81: }
-[; ;tasks.c: 82: min = 0;
+[e :U 874 ]
 "82
-[e = F7097 -> -> 0 `i `ui ]
+}
+[e :U 873 ]
+[; ;tasks.c: 81: }
+[; ;tasks.c: 82: }
+[; ;tasks.c: 83: min = 0;
 "83
+[e = F7097 -> -> 0 `i `ui ]
+"84
 }
 [e :U 872 ]
-[; ;tasks.c: 83: }
-[; ;tasks.c: 84: seg = 0;
-"84
-[e = F7096 -> -> 0 `i `ui ]
+[; ;tasks.c: 84: }
+[; ;tasks.c: 85: seg = 0;
 "85
+[e = F7096 -> -> 0 `i `ui ]
+"86
 }
 [e :U 860 ]
-[; ;tasks.c: 85: }
-[; ;tasks.c: 87: if (DutyPeltier == 0)
-"87
-[e $ ! == _DutyPeltier -> -> 0 `i `ui 881  ]
-[; ;tasks.c: 88: {
+[; ;tasks.c: 86: }
+[; ;tasks.c: 88: if (DutyPeltier == 0)
 "88
-{
-[; ;tasks.c: 89: do { LATAbits.LATA4 = 0; } while(0);
+[e $ ! == _DutyPeltier -> -> 0 `i `ui 881  ]
+[; ;tasks.c: 89: {
 "89
+{
+[; ;tasks.c: 90: do { LATAbits.LATA4 = 0; } while(0);
+"90
 [e :U 884 ]
 {
 [e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
 }
 [e :U 883 ]
-"90
-}
-[; ;tasks.c: 90: }
-[e $U 885  ]
 "91
-[e :U 881 ]
-[; ;tasks.c: 91: else
-[; ;tasks.c: 92: {
+}
+[; ;tasks.c: 91: }
+[e $U 885  ]
 "92
-{
+[e :U 881 ]
+[; ;tasks.c: 92: else
+[; ;tasks.c: 93: {
 "93
-[v F7101 `ui ~T0 @X0 1 s PeltierCounter ]
-[; ;tasks.c: 93: static unsigned int PeltierCounter;
-[; ;tasks.c: 94: if (PeltierCounter++ == 0)
-"94
-[e $ ! == ++ F7101 -> -> 1 `i `ui -> -> 0 `i `ui 886  ]
-[; ;tasks.c: 95: {
-"95
 {
-[; ;tasks.c: 96: do { LATAbits.LATA4 = 1; } while(0);
+"94
+[v F7101 `ui ~T0 @X0 1 s PeltierCounter ]
+[; ;tasks.c: 94: static unsigned int PeltierCounter;
+[; ;tasks.c: 95: if (PeltierCounter++ == 0)
+"95
+[e $ ! == ++ F7101 -> -> 1 `i `ui -> -> 0 `i `ui 886  ]
+[; ;tasks.c: 96: {
 "96
+{
+[; ;tasks.c: 97: do { LATAbits.LATA4 = 1; } while(0);
+"97
 [e :U 889 ]
 {
 [e = . . _LATAbits 0 4 -> -> 1 `i `uc ]
 }
 [e :U 888 ]
-"97
-}
-[; ;tasks.c: 97: }
-[e $U 890  ]
 "98
-[e :U 886 ]
-[; ;tasks.c: 98: else if (PeltierCounter == DutyPeltier)
-[e $ ! == F7101 _DutyPeltier 891  ]
-[; ;tasks.c: 99: {
+}
+[; ;tasks.c: 98: }
+[e $U 890  ]
 "99
-{
-[; ;tasks.c: 100: do { LATAbits.LATA4 = 0; } while(0);
+[e :U 886 ]
+[; ;tasks.c: 99: else if (PeltierCounter == DutyPeltier)
+[e $ ! == F7101 _DutyPeltier 891  ]
+[; ;tasks.c: 100: {
 "100
+{
+[; ;tasks.c: 101: do { LATAbits.LATA4 = 0; } while(0);
+"101
 [e :U 894 ]
 {
 [e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
 }
 [e :U 893 ]
-"101
-}
-[; ;tasks.c: 101: }
-[e $U 895  ]
 "102
-[e :U 891 ]
-[; ;tasks.c: 102: else if (PeltierCounter > 100)
-[e $ ! > F7101 -> -> 100 `i `ui 896  ]
-[; ;tasks.c: 103: {
+}
+[; ;tasks.c: 102: }
+[e $U 895  ]
 "103
-{
-[; ;tasks.c: 104: PeltierCounter = 0;
+[e :U 891 ]
+[; ;tasks.c: 103: else if (PeltierCounter > 100)
+[e $ ! > F7101 -> -> 100 `i `ui 896  ]
+[; ;tasks.c: 104: {
 "104
-[e = F7101 -> -> 0 `i `ui ]
+{
+[; ;tasks.c: 105: PeltierCounter = 0;
 "105
+[e = F7101 -> -> 0 `i `ui ]
+"106
 }
 [e :U 896 ]
-"106
+"107
 [e :U 895 ]
 [e :U 890 ]
 }
 [e :U 885 ]
-[; ;tasks.c: 105: }
 [; ;tasks.c: 106: }
 [; ;tasks.c: 107: }
-"107
+[; ;tasks.c: 108: }
+"108
 [e :UE 859 ]
 }
-"109
-[v _TempUpdate `TF7087 ~T0 @X0 1 e ]
 "110
+[v _TempUpdate `TF7087 ~T0 @X0 1 e ]
+"111
 {
-[; ;tasks.c: 109: inline void TempUpdate(void)
-[; ;tasks.c: 110: {
+[; ;tasks.c: 110: inline void TempUpdate(void)
+[; ;tasks.c: 111: {
 [e :U _TempUpdate ]
 [f ]
-[; ;tasks.c: 111: if (TempCounter > 10*10*10*1)
-"111
-[e $ ! > _TempCounter -> * * * -> 10 `i -> 10 `i -> 10 `i -> 1 `i `ui 898  ]
-[; ;tasks.c: 112: {
+[; ;tasks.c: 112: if (TempCounter > 10*10*10*1)
 "112
-{
-[; ;tasks.c: 113: TempAcquisition();
+[e $ ! > _TempCounter -> * * * -> 10 `i -> 10 `i -> 10 `i -> 1 `i `ui 898  ]
+[; ;tasks.c: 113: {
 "113
-[e ( _TempAcquisition ..  ]
-[; ;tasks.c: 114: TempCounter = 0;
+{
+[; ;tasks.c: 114: TempAcquisition();
 "114
-[e = _TempCounter -> -> 0 `i `ui ]
+[e ( _TempAcquisition ..  ]
+[; ;tasks.c: 115: TempCounter = 0;
 "115
+[e = _TempCounter -> -> 0 `i `ui ]
+"116
 }
 [e :U 898 ]
-[; ;tasks.c: 115: }
 [; ;tasks.c: 116: }
-"116
+[; ;tasks.c: 117: }
+"117
 [e :UE 897 ]
 }
-"117
-[v _TempAcquisition `TF7084 ~T0 @X0 1 e ]
 "118
+[v _TempAcquisition `TF7084 ~T0 @X0 1 e ]
+"119
 {
-[; ;tasks.c: 117: inline void TempAcquisition(void)
-[; ;tasks.c: 118: {
+[; ;tasks.c: 118: inline void TempAcquisition(void)
+[; ;tasks.c: 119: {
 [e :U _TempAcquisition ]
 [f ]
-"119
-[v F7106 `ui ~T0 @X0 1 s TEMPERATURA ]
-[i F7106
--> -> 0 `i `ui
-]
 "120
-[v F7107 `ui ~T0 @X0 1 s TEMPH ]
-[i F7107
--> -> 0 `i `ui
-]
+[v F7106 `ui ~T0 @X0 1 s TEMPERATURA ]
 "121
-[v F7108 `ui ~T0 @X0 1 s TEMPL ]
-[i F7108
--> -> 0 `i `ui
+[v F7107 `uc ~T0 @X0 1 s TEMPH ]
+[i F7107
+-> -> 0 `i `uc
 ]
-[; ;tasks.c: 119: static uint16_t TEMPERATURA=0;
-[; ;tasks.c: 120: static uint16_t TEMPH=0;
-[; ;tasks.c: 121: static uint16_t TEMPL=0;
-[; ;tasks.c: 123: TEMPERATURA = ADC_GetConversion(TEMP_SENSOR);
-"123
-[e = F7106 ( _ADC_GetConversion (1 . `E7026 0 ]
-[; ;tasks.c: 124: TEMP_FLOAT = (((int)(TEMPERATURA))*5)/1024;
-"124
-[e = _TEMP_FLOAT -> / * -> F7106 `i -> 5 `i -> 1024 `i `f ]
-[; ;tasks.c: 125: TEMP_FLOAT = (TEMP_FLOAT/0.08)*100;
-"125
-[e = _TEMP_FLOAT -> * / -> _TEMP_FLOAT `d .0.08 -> -> 100 `i `d `f ]
-[; ;tasks.c: 127: DutyPeltier = PID_Control((int)(TEMP_FLOAT));;
-"127
-[e = _DutyPeltier -> ( _PID_Control (1 -> _TEMP_FLOAT `i `ui ]
-[; ;tasks.c: 129: TEMPH = 0x00FF*TEMPERATURA;
-"129
-[e = F7107 * -> -> 255 `i `ui F7106 ]
-[; ;tasks.c: 130: TEMPL = (0xFF00*TEMPERATURA)>>8;
+"122
+[v F7108 `uc ~T0 @X0 1 s TEMPL ]
+[i F7108
+-> -> 0 `i `uc
+]
+[; ;tasks.c: 120: static uint16_t TEMPERATURA;
+[; ;tasks.c: 121: static uint8_t TEMPH=0;
+[; ;tasks.c: 122: static uint8_t TEMPL=0;
+[; ;tasks.c: 126: while (!ADC_IsConversionDone());
+"126
+[e $U 900  ]
+[e :U 901 ]
+[e :U 900 ]
+[e $ ! != -> ( _ADC_IsConversionDone ..  `i -> -> -> 0 `i `uc `i 901  ]
+[e :U 902 ]
+[; ;tasks.c: 128: TEMPERATURA = ADC_GetConversionResult();
+"128
+[e = F7106 ( _ADC_GetConversionResult ..  ]
+[; ;tasks.c: 130: ADC_StartConversion();
 "130
-[e = F7108 >> * -> 65280 `ui F7106 -> 8 `i ]
-[; ;tasks.c: 132: EUSART1_Write(1);
+[e ( _ADC_StartConversion ..  ]
+[; ;tasks.c: 132: TEMP_FLOAT = (((int)(TEMPERATURA))*5)/1024;
 "132
-[e ( _EUSART1_Write (1 -> -> 1 `i `uc ]
-[; ;tasks.c: 133: EUSART1_Write(TEMPL);
+[e = _TEMP_FLOAT -> / * -> F7106 `i -> 5 `i -> 1024 `i `f ]
+[; ;tasks.c: 133: TEMP_FLOAT = (TEMP_FLOAT/0.08)*100;
 "133
-[e ( _EUSART1_Write (1 -> F7108 `uc ]
-[; ;tasks.c: 134: EUSART1_Write(TEMPH);
-"134
-[e ( _EUSART1_Write (1 -> F7107 `uc ]
-[; ;tasks.c: 135: EUSART1_Write(1);
+[e = _TEMP_FLOAT -> * / -> _TEMP_FLOAT `d .0.08 -> -> 100 `i `d `f ]
+[; ;tasks.c: 135: DutyPeltier = PID_Control((int)(TEMP_FLOAT));;
 "135
-[e ( _EUSART1_Write (1 -> -> 1 `i `uc ]
-[; ;tasks.c: 137: }
-"137
+[e = _DutyPeltier -> ( _PID_Control (1 -> _TEMP_FLOAT `i `ui ]
+[; ;tasks.c: 150: }
+"150
 [e :UE 899 ]
 }

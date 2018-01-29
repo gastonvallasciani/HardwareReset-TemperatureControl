@@ -47,6 +47,7 @@ inline void MainTask()
 void TMR2_Tick(void)
 {
     TempCounter++;
+    
     static volatile unsigned uint16_t seg = 0;
     static volatile unsigned uint16_t min = 0;
     static volatile unsigned uint16_t Hard_ON = 0;
@@ -116,22 +117,34 @@ inline void TempUpdate(void)
 }
 inline void TempAcquisition(void)
 {
-    static uint16_t TEMPERATURA=0;
-    static uint16_t TEMPH=0;
-    static uint16_t TEMPL=0;
+    static uint16_t TEMPERATURA;
+    static uint8_t TEMPH=0;
+    static uint8_t TEMPL=0;
     
-    TEMPERATURA = ADC_GetConversion(TEMP_SENSOR);
+    //TEMPERATURA = ADC_GetConversion(TEMP_SENSOR);
+    
+    while (!ADC_IsConversionDone());
+    
+    TEMPERATURA = ADC_GetConversionResult();
+    
+     ADC_StartConversion();
+    
     TEMP_FLOAT = (((int)(TEMPERATURA))*5)/1024;
     TEMP_FLOAT = (TEMP_FLOAT/0.08)*100;
     
     DutyPeltier = PID_Control((int)(TEMP_FLOAT));;
     
-    TEMPH = 0x00FF*TEMPERATURA;
-    TEMPL = (0xFF00*TEMPERATURA)>>8;
+   // TEMPH = (uint8_t)(0x00FF*TEMPERATURA);
+   // TEMPL = (uint8_t)((0xFF00*TEMPERATURA)>>8);
     
-    EUSART1_Write(1);
-    EUSART1_Write(TEMPL);
-    EUSART1_Write(TEMPH);
-    EUSART1_Write(1);
+    //TEMPH = (uint8_t)(TEMPERATURA);
+    //TEMPL = (uint8_t)((TEMPERATURA)>>8);
+    
+    //EUSART1_Write(1);
+    //EUSART1_Write(TEMPL);
+    //EUSART1_Write(TEMPH);
+    //EUSART1_Write(1);
+    
+   
     
 }
