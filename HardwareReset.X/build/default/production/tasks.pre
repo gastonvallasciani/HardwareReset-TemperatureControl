@@ -8634,9 +8634,6 @@ adc_result_t ADC_GetConversionResult(void);
 # 287
 adc_result_t ADC_GetConversion(adc_channel_t channel);
 
-# 304
-void ADC_ISR(void);
-
 # 72 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
@@ -8690,7 +8687,7 @@ do { LATDbits.LATD6 = 1; } while(0);
 
 PID_SetPoint((int)(100 * 24));
 PID_SetTunings(0.1, 0.001, 0);
-PID_SetSampleTime(4000);
+PID_SetSampleTime(500);
 PID_SetOutputLimits(5, 80);
 PID_SetControllerDirection(0);
 PID_SetMode(1);
@@ -8789,7 +8786,7 @@ TEMPERATURA = ADC_GetConversionResult();
 
 ADC_StartConversion();
 
-TEMP_FLOAT = (((int)(TEMPERATURA))*5)/1024;
+TEMP_FLOAT = (((float)(TEMPERATURA))*5)/1024;
 TEMP_FLOAT = (TEMP_FLOAT/0.08)*100;
 
 DutyPeltier = PID_Control((int)(TEMP_FLOAT));;

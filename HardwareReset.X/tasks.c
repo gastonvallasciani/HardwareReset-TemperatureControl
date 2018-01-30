@@ -5,7 +5,7 @@
 #define OFF 0
 #define ON 1
 
-#define DIVIDER_PERIOD_mSeg			4000
+#define DIVIDER_PERIOD_mSeg			500
 #define DIVIDER_PERIOD				(DIVIDER_PERIOD_mSeg * _1mSeg)
 
 #define PELTIER_MIN_DUTY			5
@@ -127,15 +127,15 @@ inline void TempAcquisition(void)
     
     TEMPERATURA = ADC_GetConversionResult();
     
-     ADC_StartConversion();
+    ADC_StartConversion();
     
-    TEMP_FLOAT = (((int)(TEMPERATURA))*5)/1024;
+    TEMP_FLOAT = (((float)(TEMPERATURA))*5)/1024;
     TEMP_FLOAT = (TEMP_FLOAT/0.08)*100;
     
     DutyPeltier = PID_Control((int)(TEMP_FLOAT));;
     
-   // TEMPH = (uint8_t)(0x00FF*TEMPERATURA);
-   // TEMPL = (uint8_t)((0xFF00*TEMPERATURA)>>8);
+    //TEMPH = (uint8_t)(0x00FF*TEMPERATURA);
+    //TEMPL = (uint8_t)((0xFF00*TEMPERATURA)>>8);
     
     //TEMPH = (uint8_t)(TEMPERATURA);
     //TEMPL = (uint8_t)((TEMPERATURA)>>8);

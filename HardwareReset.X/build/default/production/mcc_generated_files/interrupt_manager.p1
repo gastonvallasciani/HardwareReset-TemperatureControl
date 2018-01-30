@@ -61,8 +61,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S435 . . . ]
 "9415
 [v _PIR1bits `VS435 ~T0 @X0 0 e@3998 ]
-"304 mcc_generated_files/adc.h
-[v _ADC_ISR `(v ~T0 @X0 0 ef ]
 "308 mcc_generated_files/tmr2.h
 [v _TMR2_ISR `(v ~T0 @X0 0 ef ]
 [; ;interrupt_manager.h: 110: void interrupt INTERRUPT_InterruptManager(void);
@@ -6693,7 +6691,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;adc.h: 224: bool ADC_IsConversionDone();
 [; ;adc.h: 257: adc_result_t ADC_GetConversionResult(void);
 [; ;adc.h: 287: adc_result_t ADC_GetConversion(adc_channel_t channel);
-[; ;adc.h: 304: void ADC_ISR(void);
 [; ;mcc.h: 72: void SYSTEM_Initialize(void);
 [; ;mcc.h: 85: void OSCILLATOR_Initialize(void);
 "51 mcc_generated_files/interrupt_manager.c
@@ -6720,45 +6717,30 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;interrupt_manager.c: 58: {
 [e :U _INTERRUPT_InterruptManager ]
 [f ]
-[; ;interrupt_manager.c: 60: if(INTCONbits.PEIE == 1 && PIE1bits.ADIE == 1 && PIR1bits.ADIF == 1)
+[; ;interrupt_manager.c: 60: if(INTCONbits.PEIE == 1 && PIE1bits.TMR2IE == 1 && PIR1bits.TMR2IF == 1)
 "60
-[e $ ! && && == -> . . _INTCONbits 1 6 `i -> 1 `i == -> . . _PIE1bits 0 6 `i -> 1 `i == -> . . _PIR1bits 0 6 `i -> 1 `i 852  ]
+[e $ ! && && == -> . . _INTCONbits 1 6 `i -> 1 `i == -> . . _PIE1bits 0 1 `i -> 1 `i == -> . . _PIR1bits 0 1 `i -> 1 `i 852  ]
 [; ;interrupt_manager.c: 61: {
 "61
 {
-[; ;interrupt_manager.c: 62: ADC_ISR();
+[; ;interrupt_manager.c: 62: TMR2_ISR();
 "62
-[e ( _ADC_ISR ..  ]
+[e ( _TMR2_ISR ..  ]
 "63
 }
 [; ;interrupt_manager.c: 63: }
 [e $U 853  ]
 "64
 [e :U 852 ]
-[; ;interrupt_manager.c: 64: else if(INTCONbits.PEIE == 1 && PIE1bits.TMR2IE == 1 && PIR1bits.TMR2IF == 1)
-[e $ ! && && == -> . . _INTCONbits 1 6 `i -> 1 `i == -> . . _PIE1bits 0 1 `i -> 1 `i == -> . . _PIR1bits 0 1 `i -> 1 `i 854  ]
+[; ;interrupt_manager.c: 64: else
 [; ;interrupt_manager.c: 65: {
 "65
 {
-[; ;interrupt_manager.c: 66: TMR2_ISR();
-"66
-[e ( _TMR2_ISR ..  ]
 "67
 }
-[; ;interrupt_manager.c: 67: }
-[e $U 855  ]
-"68
-[e :U 854 ]
-[; ;interrupt_manager.c: 68: else
-[; ;interrupt_manager.c: 69: {
-"69
-{
-"71
-}
-[e :U 855 ]
 [e :U 853 ]
-[; ;interrupt_manager.c: 71: }
-[; ;interrupt_manager.c: 72: }
-"72
+[; ;interrupt_manager.c: 67: }
+[; ;interrupt_manager.c: 68: }
+"68
 [e :UE 851 ]
 }

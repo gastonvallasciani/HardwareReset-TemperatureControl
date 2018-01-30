@@ -8696,9 +8696,6 @@ adc_result_t ADC_GetConversionResult(void);
 # 287
 adc_result_t ADC_GetConversion(adc_channel_t channel);
 
-# 304
-void ADC_ISR(void);
-
 # 72 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 

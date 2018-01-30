@@ -6725,7 +6725,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;adc.h: 224: bool ADC_IsConversionDone();
 [; ;adc.h: 257: adc_result_t ADC_GetConversionResult(void);
 [; ;adc.h: 287: adc_result_t ADC_GetConversion(adc_channel_t channel);
-[; ;adc.h: 304: void ADC_ISR(void);
 [; ;mcc.h: 72: void SYSTEM_Initialize(void);
 [; ;mcc.h: 85: void OSCILLATOR_Initialize(void);
 "111 mcc_generated_files/mcc.c

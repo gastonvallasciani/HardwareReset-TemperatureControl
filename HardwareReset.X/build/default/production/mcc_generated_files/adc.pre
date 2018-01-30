@@ -8577,9 +8577,6 @@ adc_result_t ADC_GetConversionResult(void);
 # 287
 adc_result_t ADC_GetConversion(adc_channel_t channel);
 
-# 304
-void ADC_ISR(void);
-
 # 58 "mcc_generated_files/adc.c"
 void ADC_Initialize(void)
 {
@@ -8592,7 +8589,7 @@ ADCON0 = 0x01;
 ADCON1 = 0x00;
 
 
-ADCON2 = 0x0E;
+ADCON2 = 0x8D;
 
 
 ADRESL = 0x00;
@@ -8600,8 +8597,6 @@ ADRESL = 0x00;
 
 ADRESH = 0x00;
 
-
-PIE1bits.ADIE = 1;
 }
 
 void ADC_SelectChannel(adc_channel_t channel)
@@ -8649,12 +8644,5 @@ while (ADCON0bits.GO_nDONE)
 
 return ((ADRESH << 8) + ADRESL);
 
-}
-
-
-void ADC_ISR(void)
-{
-
-PIR1bits.ADIF = 0;
 }
 

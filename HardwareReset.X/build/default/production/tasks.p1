@@ -33,9 +33,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PID_SetMode `(v ~T0 @X0 0 ef1`i ]
 "192 mcc_generated_files/adc.h
 [v _ADC_StartConversion `(v ~T0 @X0 0 ef ]
-[v F7087 `(v ~T0 @X0 1 tf ]
+[v F7085 `(v ~T0 @X0 1 tf ]
 "16 tasks.c
-[v _TempUpdate `TF7087 ~T0 @X0 0 e ]
+[v _TempUpdate `TF7085 ~T0 @X0 0 e ]
 "7481 C:\Program Files\Microchip\xc8\v1.41\include\pic18f46k22.h
 [s S375 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S375 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
@@ -47,9 +47,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S374 . . . ]
 "7502
 [v _LATAbits `VS374 ~T0 @X0 0 e@3977 ]
-[v F7084 `(v ~T0 @X0 1 tf ]
+[v F7082 `(v ~T0 @X0 1 tf ]
 "15 tasks.c
-[v _TempAcquisition `TF7084 ~T0 @X0 0 e ]
+[v _TempAcquisition `TF7082 ~T0 @X0 0 e ]
 "224 mcc_generated_files/adc.h
 [v _ADC_IsConversionDone `(uc ~T0 @X0 0 ef ]
 "257
@@ -6684,7 +6684,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;adc.h: 224: bool ADC_IsConversionDone();
 [; ;adc.h: 257: adc_result_t ADC_GetConversionResult(void);
 [; ;adc.h: 287: adc_result_t ADC_GetConversion(adc_channel_t channel);
-[; ;adc.h: 304: void ADC_ISR(void);
 [; ;mcc.h: 72: void SYSTEM_Initialize(void);
 [; ;mcc.h: 85: void OSCILLATOR_Initialize(void);
 [; ;tasks.h: 15: inline void InitHardware();
@@ -6721,9 +6720,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "20
 [v _DutyPeltier `ui ~T0 @X0 1 e ]
 [; ;tasks.c: 20: unsigned int DutyPeltier;
-[v F7049 `(v ~T0 @X0 1 tf ]
+[v F7047 `(v ~T0 @X0 1 tf ]
 "22
-[v _InitHardware `TF7049 ~T0 @X0 1 e ]
+[v _InitHardware `TF7047 ~T0 @X0 1 e ]
 "23
 {
 [; ;tasks.c: 22: inline void InitHardware()
@@ -6756,9 +6755,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tasks.c: 32: PID_SetTunings(0.1, 0.001, 0);
 "32
 [e ( _PID_SetTunings (3 , , .0.1 .0.001 -> -> 0 `i `d ]
-[; ;tasks.c: 33: PID_SetSampleTime(4000);
+[; ;tasks.c: 33: PID_SetSampleTime(500);
 "33
-[e ( _PID_SetSampleTime (1 -> 4000 `i ]
+[e ( _PID_SetSampleTime (1 -> 500 `i ]
 [; ;tasks.c: 34: PID_SetOutputLimits(5, 80);
 "34
 [e ( _PID_SetOutputLimits (2 , -> 5 `i -> 80 `i ]
@@ -6775,9 +6774,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "40
 [e :UE 851 ]
 }
-[v F7051 `(v ~T0 @X0 1 tf ]
+[v F7049 `(v ~T0 @X0 1 tf ]
 "42
-[v _MainTask `TF7051 ~T0 @X0 1 e ]
+[v _MainTask `TF7049 ~T0 @X0 1 e ]
 "43
 {
 [; ;tasks.c: 42: inline void MainTask()
@@ -6803,28 +6802,28 @@ Version 3.2 HI-TECH Software Intermediate Code
 "49
 [e ++ _TempCounter -> -> 1 `i `ui ]
 "51
-[v F7096 `Vui ~T0 @X0 1 s seg ]
-[i F7096
+[v F7094 `Vui ~T0 @X0 1 s seg ]
+[i F7094
 -> -> 0 `i `ui
 ]
 "52
-[v F7097 `Vui ~T0 @X0 1 s min ]
-[i F7097
+[v F7095 `Vui ~T0 @X0 1 s min ]
+[i F7095
 -> -> 0 `i `ui
 ]
 "53
-[v F7098 `Vui ~T0 @X0 1 s Hard_ON ]
-[i F7098
+[v F7096 `Vui ~T0 @X0 1 s Hard_ON ]
+[i F7096
 -> -> 0 `i `ui
 ]
 "54
-[v F7099 `Vui ~T0 @X0 1 s Hard_OFF ]
-[i F7099
+[v F7097 `Vui ~T0 @X0 1 s Hard_OFF ]
+[i F7097
 -> -> 0 `i `ui
 ]
 "55
-[v F7100 `Vui ~T0 @X0 1 s State ]
-[i F7100
+[v F7098 `Vui ~T0 @X0 1 s State ]
+[i F7098
 -> -> 0 `i `ui
 ]
 [; ;tasks.c: 51: static volatile unsigned uint16_t seg = 0;
@@ -6834,7 +6833,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tasks.c: 55: static volatile unsigned uint16_t State = 0;
 [; ;tasks.c: 57: if (++seg >= 1000)
 "57
-[e $ ! >= =+ F7096 -> -> 1 `i `ui -> -> 1000 `i `ui 860  ]
+[e $ ! >= =+ F7094 -> -> 1 `i `ui -> -> 1000 `i `ui 860  ]
 [; ;tasks.c: 58: {
 "58
 {
@@ -6847,13 +6846,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 862 ]
 [; ;tasks.c: 60: if ((++Hard_OFF >= 10))
 "60
-[e $ ! >= =+ F7099 -> -> 1 `i `ui -> -> 10 `i `ui 864  ]
+[e $ ! >= =+ F7097 -> -> 1 `i `ui -> -> 10 `i `ui 864  ]
 [; ;tasks.c: 61: {
 "61
 {
 [; ;tasks.c: 62: if (State == 0)
 "62
-[e $ ! == F7100 -> -> 0 `i `ui 865  ]
+[e $ ! == F7098 -> -> 0 `i `ui 865  ]
 [; ;tasks.c: 63: {
 "63
 {
@@ -6873,42 +6872,42 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 870 ]
 [; ;tasks.c: 66: State = 1;
 "66
-[e = F7100 -> -> 1 `i `ui ]
+[e = F7098 -> -> 1 `i `ui ]
 "67
 }
 [e :U 865 ]
 [; ;tasks.c: 67: }
 [; ;tasks.c: 68: Hard_OFF = 0;
 "68
-[e = F7099 -> -> 0 `i `ui ]
+[e = F7097 -> -> 0 `i `ui ]
 "70
 }
 [e :U 864 ]
 [; ;tasks.c: 70: }
 [; ;tasks.c: 71: if (++min >= 60)
 "71
-[e $ ! >= =+ F7097 -> -> 1 `i `ui -> -> 60 `i `ui 872  ]
+[e $ ! >= =+ F7095 -> -> 1 `i `ui -> -> 60 `i `ui 872  ]
 [; ;tasks.c: 72: {
 "72
 {
 [; ;tasks.c: 73: if ((++Hard_ON >= 60))
 "73
-[e $ ! >= =+ F7098 -> -> 1 `i `ui -> -> 60 `i `ui 873  ]
+[e $ ! >= =+ F7096 -> -> 1 `i `ui -> -> 60 `i `ui 873  ]
 [; ;tasks.c: 74: {
 "74
 {
 [; ;tasks.c: 75: Hard_ON=0;
 "75
-[e = F7098 -> -> 0 `i `ui ]
+[e = F7096 -> -> 0 `i `ui ]
 [; ;tasks.c: 76: if(State == 1)
 "76
-[e $ ! == F7100 -> -> 1 `i `ui 874  ]
+[e $ ! == F7098 -> -> 1 `i `ui 874  ]
 [; ;tasks.c: 77: {
 "77
 {
 [; ;tasks.c: 78: State = 0;
 "78
-[e = F7100 -> -> 0 `i `ui ]
+[e = F7098 -> -> 0 `i `ui ]
 [; ;tasks.c: 79: do { LATDbits.LATD6 = 1; } while(0);
 "79
 [e :U 877 ]
@@ -6933,14 +6932,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tasks.c: 82: }
 [; ;tasks.c: 83: min = 0;
 "83
-[e = F7097 -> -> 0 `i `ui ]
+[e = F7095 -> -> 0 `i `ui ]
 "84
 }
 [e :U 872 ]
 [; ;tasks.c: 84: }
 [; ;tasks.c: 85: seg = 0;
 "85
-[e = F7096 -> -> 0 `i `ui ]
+[e = F7094 -> -> 0 `i `ui ]
 "86
 }
 [e :U 860 ]
@@ -6969,11 +6968,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 "93
 {
 "94
-[v F7101 `ui ~T0 @X0 1 s PeltierCounter ]
+[v F7099 `ui ~T0 @X0 1 s PeltierCounter ]
 [; ;tasks.c: 94: static unsigned int PeltierCounter;
 [; ;tasks.c: 95: if (PeltierCounter++ == 0)
 "95
-[e $ ! == ++ F7101 -> -> 1 `i `ui -> -> 0 `i `ui 886  ]
+[e $ ! == ++ F7099 -> -> 1 `i `ui -> -> 0 `i `ui 886  ]
 [; ;tasks.c: 96: {
 "96
 {
@@ -6991,7 +6990,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "99
 [e :U 886 ]
 [; ;tasks.c: 99: else if (PeltierCounter == DutyPeltier)
-[e $ ! == F7101 _DutyPeltier 891  ]
+[e $ ! == F7099 _DutyPeltier 891  ]
 [; ;tasks.c: 100: {
 "100
 {
@@ -7009,13 +7008,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 "103
 [e :U 891 ]
 [; ;tasks.c: 103: else if (PeltierCounter > 100)
-[e $ ! > F7101 -> -> 100 `i `ui 896  ]
+[e $ ! > F7099 -> -> 100 `i `ui 896  ]
 [; ;tasks.c: 104: {
 "104
 {
 [; ;tasks.c: 105: PeltierCounter = 0;
 "105
-[e = F7101 -> -> 0 `i `ui ]
+[e = F7099 -> -> 0 `i `ui ]
 "106
 }
 [e :U 896 ]
@@ -7031,7 +7030,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 859 ]
 }
 "110
-[v _TempUpdate `TF7087 ~T0 @X0 1 e ]
+[v _TempUpdate `TF7085 ~T0 @X0 1 e ]
 "111
 {
 [; ;tasks.c: 110: inline void TempUpdate(void)
@@ -7059,7 +7058,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 897 ]
 }
 "118
-[v _TempAcquisition `TF7084 ~T0 @X0 1 e ]
+[v _TempAcquisition `TF7082 ~T0 @X0 1 e ]
 "119
 {
 [; ;tasks.c: 118: inline void TempAcquisition(void)
@@ -7067,15 +7066,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U _TempAcquisition ]
 [f ]
 "120
-[v F7106 `ui ~T0 @X0 1 s TEMPERATURA ]
+[v F7104 `ui ~T0 @X0 1 s TEMPERATURA ]
 "121
-[v F7107 `uc ~T0 @X0 1 s TEMPH ]
-[i F7107
+[v F7105 `uc ~T0 @X0 1 s TEMPH ]
+[i F7105
 -> -> 0 `i `uc
 ]
 "122
-[v F7108 `uc ~T0 @X0 1 s TEMPL ]
-[i F7108
+[v F7106 `uc ~T0 @X0 1 s TEMPL ]
+[i F7106
 -> -> 0 `i `uc
 ]
 [; ;tasks.c: 120: static uint16_t TEMPERATURA;
@@ -7090,13 +7089,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U 902 ]
 [; ;tasks.c: 128: TEMPERATURA = ADC_GetConversionResult();
 "128
-[e = F7106 ( _ADC_GetConversionResult ..  ]
+[e = F7104 ( _ADC_GetConversionResult ..  ]
 [; ;tasks.c: 130: ADC_StartConversion();
 "130
 [e ( _ADC_StartConversion ..  ]
-[; ;tasks.c: 132: TEMP_FLOAT = (((int)(TEMPERATURA))*5)/1024;
+[; ;tasks.c: 132: TEMP_FLOAT = (((float)(TEMPERATURA))*5)/1024;
 "132
-[e = _TEMP_FLOAT -> / * -> F7106 `i -> 5 `i -> 1024 `i `f ]
+[e = _TEMP_FLOAT / * -> F7104 `f -> -> 5 `i `f -> -> 1024 `i `f ]
 [; ;tasks.c: 133: TEMP_FLOAT = (TEMP_FLOAT/0.08)*100;
 "133
 [e = _TEMP_FLOAT -> * / -> _TEMP_FLOAT `d .0.08 -> -> 100 `i `d `f ]

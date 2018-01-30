@@ -8634,9 +8634,6 @@ adc_result_t ADC_GetConversionResult(void);
 # 287
 adc_result_t ADC_GetConversion(adc_channel_t channel);
 
-# 304
-void ADC_ISR(void);
-
 # 72 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
@@ -8653,11 +8650,7 @@ RCONbits.IPEN = 0;
 void interrupt INTERRUPT_InterruptManager (void)
 {
 
-if(INTCONbits.PEIE == 1 && PIE1bits.ADIE == 1 && PIR1bits.ADIF == 1)
-{
-ADC_ISR();
-}
-else if(INTCONbits.PEIE == 1 && PIE1bits.TMR2IE == 1 && PIR1bits.TMR2IF == 1)
+if(INTCONbits.PEIE == 1 && PIE1bits.TMR2IE == 1 && PIR1bits.TMR2IF == 1)
 {
 TMR2_ISR();
 }
